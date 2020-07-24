@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		F74B2A5524CAE6D5001A614A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B2A5424CAE6D5001A614A /* AppDelegate.swift */; };
 		F74B2A5724CAE6D5001A614A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B2A5624CAE6D5001A614A /* SceneDelegate.swift */; };
-		F74B2A5924CAE6D5001A614A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B2A5824CAE6D5001A614A /* ViewController.swift */; };
+		F74B2A5924CAE6D5001A614A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B2A5824CAE6D5001A614A /* MapViewController.swift */; };
 		F74B2A5C24CAE6D5001A614A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74B2A5A24CAE6D5001A614A /* Main.storyboard */; };
 		F74B2A5E24CAE6DA001A614A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F74B2A5D24CAE6DA001A614A /* Assets.xcassets */; };
 		F74B2A6124CAE6DA001A614A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74B2A5F24CAE6DA001A614A /* LaunchScreen.storyboard */; };
+		F74B2A6924CAE851001A614A /* Ranta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B2A6824CAE851001A614A /* Ranta.swift */; };
+		F74B2A6C24CAF17C001A614A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F74B2A6B24CAF17C001A614A /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F74B2A5124CAE6D5001A614A /* HelSwim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelSwim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F74B2A5424CAE6D5001A614A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F74B2A5624CAE6D5001A614A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F74B2A5824CAE6D5001A614A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F74B2A5824CAE6D5001A614A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F74B2A5B24CAE6D5001A614A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F74B2A5D24CAE6DA001A614A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F74B2A6024CAE6DA001A614A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F74B2A6224CAE6DA001A614A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F74B2A6824CAE851001A614A /* Ranta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranta.swift; sourceTree = "<group>"; };
+		F74B2A6B24CAF17C001A614A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F74B2A6C24CAF17C001A614A /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,7 @@
 			children = (
 				F74B2A5324CAE6D5001A614A /* HelSwim */,
 				F74B2A5224CAE6D5001A614A /* Products */,
+				F74B2A6A24CAF17C001A614A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +64,22 @@
 			children = (
 				F74B2A5424CAE6D5001A614A /* AppDelegate.swift */,
 				F74B2A5624CAE6D5001A614A /* SceneDelegate.swift */,
-				F74B2A5824CAE6D5001A614A /* ViewController.swift */,
+				F74B2A5824CAE6D5001A614A /* MapViewController.swift */,
 				F74B2A5A24CAE6D5001A614A /* Main.storyboard */,
+				F74B2A6824CAE851001A614A /* Ranta.swift */,
 				F74B2A5D24CAE6DA001A614A /* Assets.xcassets */,
 				F74B2A5F24CAE6DA001A614A /* LaunchScreen.storyboard */,
 				F74B2A6224CAE6DA001A614A /* Info.plist */,
 			);
 			path = HelSwim;
+			sourceTree = "<group>";
+		};
+		F74B2A6A24CAF17C001A614A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F74B2A6B24CAF17C001A614A /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +153,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F74B2A5924CAE6D5001A614A /* ViewController.swift in Sources */,
+				F74B2A6924CAE851001A614A /* Ranta.swift in Sources */,
+				F74B2A5924CAE6D5001A614A /* MapViewController.swift in Sources */,
 				F74B2A5524CAE6D5001A614A /* AppDelegate.swift in Sources */,
 				F74B2A5724CAE6D5001A614A /* SceneDelegate.swift in Sources */,
 			);
