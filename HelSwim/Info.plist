@@ -48,6 +48,7 @@
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
+		<string>location-services</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
@@ -63,6 +64,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Tämä äppi halua näyttää teile missä olette kartalla. </string>
+	<string>Tämä äppi haluaa näyttää teile missä olette kartalla. </string>
 </dict>
 </plist>
