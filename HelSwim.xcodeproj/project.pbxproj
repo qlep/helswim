@@ -13,7 +13,7 @@
 		F74B2A5C24CAE6D5001A614A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74B2A5A24CAE6D5001A614A /* Main.storyboard */; };
 		F74B2A5E24CAE6DA001A614A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F74B2A5D24CAE6DA001A614A /* Assets.xcassets */; };
 		F74B2A6124CAE6DA001A614A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74B2A5F24CAE6DA001A614A /* LaunchScreen.storyboard */; };
-		F74B2A6924CAE851001A614A /* Ranta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B2A6824CAE851001A614A /* Ranta.swift */; };
+		F74B2A6924CAE851001A614A /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B2A6824CAE851001A614A /* Sensor.swift */; };
 		F74B2A6C24CAF17C001A614A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F74B2A6B24CAF17C001A614A /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +26,7 @@
 		F74B2A5D24CAE6DA001A614A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F74B2A6024CAE6DA001A614A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F74B2A6224CAE6DA001A614A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F74B2A6824CAE851001A614A /* Ranta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranta.swift; sourceTree = "<group>"; };
+		F74B2A6824CAE851001A614A /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		F74B2A6B24CAF17C001A614A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -66,7 +66,7 @@
 				F74B2A5624CAE6D5001A614A /* SceneDelegate.swift */,
 				F74B2A5824CAE6D5001A614A /* MapViewController.swift */,
 				F74B2A5A24CAE6D5001A614A /* Main.storyboard */,
-				F74B2A6824CAE851001A614A /* Ranta.swift */,
+				F74B2A6824CAE851001A614A /* Sensor.swift */,
 				F74B2A5D24CAE6DA001A614A /* Assets.xcassets */,
 				F74B2A5F24CAE6DA001A614A /* LaunchScreen.storyboard */,
 				F74B2A6224CAE6DA001A614A /* Info.plist */,
@@ -153,7 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F74B2A6924CAE851001A614A /* Ranta.swift in Sources */,
+				F74B2A6924CAE851001A614A /* Sensor.swift in Sources */,
 				F74B2A5924CAE6D5001A614A /* MapViewController.swift in Sources */,
 				F74B2A5524CAE6D5001A614A /* AppDelegate.swift in Sources */,
 				F74B2A5724CAE6D5001A614A /* SceneDelegate.swift in Sources */,
