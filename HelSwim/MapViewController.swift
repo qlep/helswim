@@ -16,48 +16,59 @@ class MapViewController: UIViewController {
     let locationManager = CLLocationManager()
     var userLocation: CLLocation?
     var sensors = [Sensor]()
+    
+    let mapCenter = CLLocationCoordinate2D(latitude: 60.227704, longitude: 24.983821)
+    var region = MKCoordinateRegion()
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let endpoint = "uiras-meta"
-//        let endpoint = "uiras2_v1"
+
+        let endpoint = "uiras2_v1"
         let url = uirasURL(with: endpoint)
         
-        // fetch and parce data
-        if let data = fetchData(with: url) {
-            let results = parse(data: data)
+        performRequest(url: url)
+        
+        region = MKCoordinateRegion(center: mapCenter, latitudinalMeters: 7000, longitudinalMeters: 12500)
+        
+        mapView.setRegion(mapView.regionThatFits(region), animated: true)
+        mapView.showsUserLocation = true
+    }
+    
+    // MARK: - TODO data fetching
+    func performRequest(url: URL) {
+        // create URLSession
+        let session = URLSession(configuration: .default)
             
-            for (_, sensor) in results {
-                sensors.append(sensor)
-                print("\(sensor.name): \(sensor.lat) \(sensor.lon)")
+        // give session task
+        let task = session.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                print(error as Any)
+                return
+            }
+                
+            if let safeData = data {
+                self.parseJSON(responseData: safeData)
             }
         }
-        
-        mapView.addAnnotations(sensors)
+        // start the task
+        task.resume()
     }
-    
-    // this is how data fetched from url
-    func fetchData(with url: URL) -> Data? {
+
+    func parseJSON(responseData: Data) {
+        let decoder = JSONDecoder()
         do {
-            return try Data(contentsOf: url)
+            let decodedData = try decoder.decode(Response.self, from: responseData)
+            for sensor in decodedData.sensors {
+                sensors.append(sensor.value)
+            }
+            
+            DispatchQueue.main.async {
+                self.mapView.addAnnotations(self.sensors)
+            }
+            
         } catch {
-            print("*** Download error: \(error.localizedDescription)")
-            showNetworkError()
-            return nil
-        }
-    }
-    
-    // this is how received JSON data is parsed
-    func parse(data: Data) -> [String:Sensor] {
-        do {
-            let decoder = JSONDecoder()
-            let result = try decoder.decode([String:Sensor].self, from: data)
-            return result
-        } catch {
-            print("*** JSON Error: \(error)")
-            return [:]
+            print(error)
         }
     }
 
@@ -131,7 +142,11 @@ class MapViewController: UIViewController {
 
 // MARK: - MKMapViewDelegate
 extension MapViewController: MKMapViewDelegate {
-    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        var annotationView: MKAnnotationView?
+        
+        return annotationView
+    }
 }
 
 // MARK: - CLLocationManagerDelegate
