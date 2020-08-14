@@ -21,6 +21,10 @@ class MapViewController: UIViewController {
     var region = MKCoordinateRegion()
 
     // MARK: - Lifecycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,7 +39,7 @@ class MapViewController: UIViewController {
         mapView.showsUserLocation = true
     }
     
-    // MARK: - TODO data fetching
+    // MARK: - Data fetching and parsing
     func performRequest(url: URL) {
         // create URLSession
         let session = URLSession(configuration: .default)
@@ -54,7 +58,8 @@ class MapViewController: UIViewController {
         // start the task
         task.resume()
     }
-
+    
+    // decoding data JSON
     func parseJSON(responseData: Data) {
         let decoder = JSONDecoder()
         do {
@@ -138,14 +143,74 @@ class MapViewController: UIViewController {
         
         return url!
     }
+    
+    // MARK: - Navigation
+    // passing sensors array on to SensorListViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowList" {
+            let controller = segue.destination as! SensorListViewController
+            controller.sensors = sensors
+        }
+    }
+    
+    
 }
 
 // MARK: - MKMapViewDelegate
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        var annotationView: MKAnnotationView?
+        
+        // 1
+        guard annotation is Sensor else {
+            return nil
+        }
+        
+        // 2
+        let identifier = "Sensor"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        
+        if annotationView == nil {
+            let markerView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            markerView.subtitleVisibility = .visible
+            
+            let rightButton = UIButton(type: .detailDisclosure)
+            markerView.rightCalloutAccessoryView = rightButton
+            
+            annotationView = markerView
+        }
+        
+        if let annotationView = annotationView {
+            annotationView.annotation = annotation
+            
+            let button = annotationView.rightCalloutAccessoryView as! UIButton
+            
+            if let index = sensors.firstIndex(of: annotation as! Sensor) {
+                button.tag = index
+            }
+        }
         
         return annotationView
+    }
+    
+    // when annotation view is selected
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let annotation = view.annotation as! Sensor
+        
+        // this is how SensorDetailViewController is instantiated
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "Detail") as! SensorDetailViewController
+        
+        if let index = sensors.firstIndex(of: annotation) {
+            controller.sensor = sensors[index]
+        }
+        
+        // present SensorDetailViewController on annotation view tap
+        present(controller, animated: true)
+        mapView.deselectAnnotation(annotation, animated: true)
+    }
+    
+    // deselecting annotation after controller os presented
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
     }
 }
 
