@@ -25,8 +25,8 @@ class SensorDetailViewController: UITableViewController {
         super.viewDidLoad()
         
         titleLabel.text = sensor.subtitle
-        waterTempLabel.text = "\(sensor.data.last?.temp_water ?? 0.0)°C"
-        airTempLabel.text = "\(sensor.data.last?.temp_air ?? 0.0)°C"
+        waterTempLabel.text = String(format: "%.1f°C", sensor.data.last?.temp_water ?? "")
+        airTempLabel.text = String(format: "%.1f°C", sensor.data.last?.temp_water ?? "")
     }
     
     // MARK: - Actions

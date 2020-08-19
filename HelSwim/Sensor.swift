@@ -56,7 +56,7 @@ public class Sensor: NSObject, Decodable, MKAnnotation {
         if data.last?.temp_water == nil {
             return ("")
         } else {
-            return ("\(data.last?.temp_water ?? 0)°C")
+            return (String(format: "%.1f°C", data.last?.temp_water ?? ""))
         }
     }
 }

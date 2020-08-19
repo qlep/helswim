@@ -15,11 +15,11 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     var userLocation: CLLocation?
+    
+    var mapCenter = CLLocationCoordinate2D(latitude: 60.227704, longitude: 24.983821)
+    
     var sensors = [Sensor]()
     
-    let mapCenter = CLLocationCoordinate2D(latitude: 60.227704, longitude: 24.983821)
-    var region = MKCoordinateRegion()
-
     // MARK: - Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -33,10 +33,7 @@ class MapViewController: UIViewController {
         
         performRequest(url: url)
         
-        region = MKCoordinateRegion(center: mapCenter, latitudinalMeters: 7000, longitudinalMeters: 12500)
-        
-        mapView.setRegion(mapView.regionThatFits(region), animated: true)
-        mapView.showsUserLocation = true
+        showMapCenter()
     }
     
     // MARK: - Data fetching and parsing
@@ -78,7 +75,7 @@ class MapViewController: UIViewController {
     }
 
     // MARK: - Actions
-    // this puts user location on map
+    // this goes to user location on map
     @IBAction func showUserLocation() {
         // check for location tracing permissions first
         let authStatus = CLLocationManager.authorizationStatus()
@@ -98,6 +95,27 @@ class MapViewController: UIViewController {
         mapView.setRegion(mapView.regionThatFits(region), animated: true)
 
         getCoordinates()
+    }
+    
+    @IBAction func showMapCenter() {
+        
+        mapCenter = CLLocationCoordinate2D(latitude: 60.227704, longitude: 24.983821)
+        
+        let region = MKCoordinateRegion(center: mapCenter, latitudinalMeters: 7000, longitudinalMeters: 12500)
+        
+        mapView.setRegion(mapView.regionThatFits(region), animated: true)
+        mapView.showsUserLocation = true
+    }
+    
+    // when user taps sensor in sensor list unwinds segue here
+    @IBAction func userDidPickSensorFromList(_ segue: UIStoryboardSegue) {
+        let controller = segue.source as! SensorListViewController
+        
+        mapCenter = controller.selectedSensor.coordinate
+        
+        let region = MKCoordinateRegion(center: mapCenter, latitudinalMeters: 1000, longitudinalMeters: 1000)
+        
+        mapView.setRegion(mapView.regionThatFits(region), animated: true)
     }
 
     // MARK: - Helper methods
@@ -203,14 +221,11 @@ extension MapViewController: MKMapViewDelegate {
         if let index = sensors.firstIndex(of: annotation) {
             controller.sensor = sensors[index]
         }
-        
-        // present SensorDetailViewController on annotation view tap
+        // present SensorDetailViewController popover on annotation view tap
         present(controller, animated: true)
+        
+        // deselecting annotation after controller presented
         mapView.deselectAnnotation(annotation, animated: true)
-    }
-    
-    // deselecting annotation after controller os presented
-    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
     }
 }
 
