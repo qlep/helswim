@@ -15,15 +15,12 @@ class SensorDetailViewController: UITableViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var waterTempLabel: UILabel!
     @IBOutlet weak var airTempLabel: UILabel!
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super .viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = false
-    }
+    @IBOutlet weak var navigationBar: UINavigationBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationBar.topItem?.title = sensor.subtitle
         titleLabel.text = sensor.subtitle
         waterTempLabel.text = String(format: "%.1f°C", sensor.data.last?.temp_water ?? "")
         airTempLabel.text = String(format: "%.1f°C", sensor.data.last?.temp_water ?? "")

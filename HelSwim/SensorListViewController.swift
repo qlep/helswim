@@ -8,10 +8,12 @@
 
 import UIKit
 
-class SensorListViewController: UITableViewController {
+class SensorListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var sensors: [Sensor] = []
     var selectedSensor = Sensor()
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -20,6 +22,10 @@ class SensorListViewController: UITableViewController {
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // should not forget to conform to UITableViewDelegate and DataSource proto in class def
+        tableView.delegate = self
+        tableView.dataSource = self
         
         // sort sensors in shorthand closure by water temperature attribute in descending order
         sensors = sensors.sorted { $0.data.last!.temp_water! > $1.data.last!.temp_water! }
@@ -44,12 +50,12 @@ class SensorListViewController: UITableViewController {
     
     // MARK: - Table View Delegates
     // number of rows in table
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sensors.count
     }
     
     // customize cell view
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Sensor", for: indexPath)
         let sensor = sensors[indexPath.row]
         
@@ -61,7 +67,7 @@ class SensorListViewController: UITableViewController {
     }
     
     // when cell is selected
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
     }
 }
