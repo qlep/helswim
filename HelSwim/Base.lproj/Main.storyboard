@@ -49,7 +49,7 @@
                                     <constraint firstAttribute="height" constant="66" id="P67-KR-gjC"/>
                                     <constraint firstAttribute="width" constant="63" id="xa5-Nn-Ace"/>
                                 </constraints>
-                                <state key="normal" image="eye" catalog="system"/>
+                                <state key="normal" image="sun.max.fill" catalog="system"/>
                                 <connections>
                                     <action selector="showMapCenter" destination="BYZ-38-t0r" eventType="touchUpInside" id="eoF-4Y-B5p"/>
                                 </connections>
@@ -77,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="766" y="125"/>
+            <point key="canvasLocation" x="714" y="125"/>
         </scene>
         <!--Sensor List View Controller-->
         <scene sceneID="rgM-ws-P3D">
@@ -93,7 +93,7 @@
                                     <constraint firstAttribute="height" constant="44" id="t1z-Ph-s8K"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Helsingin rannat" id="jbC-Z8-3qu">
+                                    <navigationItem title="Helsingin uimarannat" id="jbC-Z8-3qu">
                                         <barButtonItem key="rightBarButtonItem" title="OK" id="8D3-aL-5jZ">
                                             <connections>
                                                 <action selector="ok" destination="Dlc-B2-QNE" id="s80-Ux-jdh"/>
@@ -161,7 +161,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cca-19-j3i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="JdY-wP-eAP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="765.60000000000002" y="842.42878560719646"/>
+            <point key="canvasLocation" x="714" y="869"/>
         </scene>
         <!--Sensor Detail View Controller-->
         <scene sceneID="DtN-LO-dcL">
@@ -185,23 +185,29 @@
                             </items>
                         </navigationBar>
                         <sections>
-                            <tableViewSection headerTitle="Ranta" id="cdN-rF-La8" userLabel="Ranta">
+                            <tableViewSection id="Fx8-IO-s8O">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="Zxd-DI-aD0" style="IBUITableViewCellStyleDefault" id="uXz-Ce-Mev">
-                                        <rect key="frame" x="0.0" y="99.5" width="375" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="264" id="Kmk-uN-vDs">
+                                        <rect key="frame" x="0.0" y="62" width="375" height="264"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uXz-Ce-Mev" id="QJL-tf-fJM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kmk-uN-vDs" id="y2O-Hh-pSl">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="264"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Ranta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zxd-DI-aD0">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dJH-73-p8u">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="264"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="OC1-ul-q7O" id="vBR-BG-4VS"/>
+                                                    </connections>
+                                                </mapView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="dJH-73-p8u" secondAttribute="trailing" id="Bvo-er-iNt"/>
+                                                <constraint firstItem="dJH-73-p8u" firstAttribute="leading" secondItem="y2O-Hh-pSl" secondAttribute="leading" id="PPT-ou-JZQ"/>
+                                                <constraint firstItem="dJH-73-p8u" firstAttribute="centerX" secondItem="y2O-Hh-pSl" secondAttribute="centerX" id="cOv-8d-tzA"/>
+                                                <constraint firstItem="dJH-73-p8u" firstAttribute="centerY" secondItem="y2O-Hh-pSl" secondAttribute="centerY" id="iH7-Kb-Ndu"/>
+                                                <constraint firstItem="dJH-73-p8u" firstAttribute="top" secondItem="y2O-Hh-pSl" secondAttribute="top" id="kNr-e6-nFp"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -209,16 +215,16 @@
                             <tableViewSection headerTitle="Vesi" id="Nt7-Qg-MRd" userLabel="Veden lämpötila">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="hcz-kw-3v8" style="IBUITableViewCellStyleDefault" id="DXV-Vt-mCn">
-                                        <rect key="frame" x="0.0" y="199" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="382" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DXV-Vt-mCn" id="mDJ-Yn-rjq">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Vesi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hcz-kw-3v8">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Vesi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hcz-kw-3v8">
                                                     <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -230,16 +236,16 @@
                             <tableViewSection headerTitle="Ilma" id="CZB-gt-rkO" userLabel="Ilman lämpötila">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="zzx-We-sKe" style="IBUITableViewCellStyleDefault" id="X8F-3K-CEX">
-                                        <rect key="frame" x="0.0" y="298.5" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="481.5" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X8F-3K-CEX" id="Pts-Ta-T7x">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Ilma" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zzx-We-sKe">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Ilma" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zzx-We-sKe">
                                                     <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -256,14 +262,14 @@
                     </tableView>
                     <connections>
                         <outlet property="airTempLabel" destination="zzx-We-sKe" id="bHX-fj-Jc2"/>
+                        <outlet property="mapView" destination="dJH-73-p8u" id="6ce-zZ-JDa"/>
                         <outlet property="navigationBar" destination="MjE-of-OwB" id="Khb-vw-2VT"/>
-                        <outlet property="titleLabel" destination="Zxd-DI-aD0" id="dYG-dE-Wrp"/>
                         <outlet property="waterTempLabel" destination="hcz-kw-3v8" id="xcg-b3-EC2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPA-kU-iPe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1487" y="126"/>
+            <point key="canvasLocation" x="1365.5999999999999" y="124.58770614692655"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NmS-as-gge">
@@ -285,8 +291,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="eye" catalog="system" width="128" height="81"/>
         <image name="list.number" catalog="system" width="128" height="97"/>
         <image name="location.fill" catalog="system" width="128" height="115"/>
+        <image name="sun.max.fill" catalog="system" width="128" height="124"/>
     </resources>
 </document>

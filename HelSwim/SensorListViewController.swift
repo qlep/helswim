@@ -23,7 +23,7 @@ class SensorListViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // should not forget to conform to UITableViewDelegate and DataSource proto in class def
+        // should not forget to conform to UITableViewDelegate and DataSource proto in UIViewController class def
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -59,9 +59,13 @@ class SensorListViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "Sensor", for: indexPath)
         let sensor = sensors[indexPath.row]
         
-        cell.textLabel?.text = sensor.subtitle
-//        cell.detailTextLabel?.text = "\(sensor.data.last?.temp_water ?? 0.0)"
-        cell.detailTextLabel?.text = String(format: "%.1f°C", sensor.data.last?.temp_water! ?? "")
+        if sensor.subtitle == "Herttoniemi (Tuorinniemen uimalaituri)" {
+            cell.textLabel?.text = "Herttoniemen uimaranta"
+        } else {
+            cell.textLabel?.text = sensor.subtitle
+        }
+        
+        cell.detailTextLabel?.text = String(format: "%.1f°C", sensor.data.last?.temp_water ?? "")
         
         return cell
     }

@@ -104,7 +104,6 @@ class MapViewController: UIViewController {
         let region = MKCoordinateRegion(center: mapCenter, latitudinalMeters: 7000, longitudinalMeters: 12500)
         
         mapView.setRegion(mapView.regionThatFits(region), animated: true)
-        mapView.showsUserLocation = true
     }
     
     // when user taps sensor in sensor list unwinds segue here
