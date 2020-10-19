@@ -220,9 +220,6 @@ extension MapViewController: MKMapViewDelegate {
         }
         // present SensorDetailViewController popover on annotation view tap
         present(controller, animated: true)
-       
-        // or show SensorDetailViewController as window
-//        show(controller, sender: self)
         
         // deselecting annotation after controller presented
         mapView.deselectAnnotation(annotation, animated: true)

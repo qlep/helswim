@@ -23,14 +23,13 @@ class SensorDetailViewController: UITableViewController {
         
         mapView.mapType = .satellite
         
-        let mapCenter = sensor.coordinate
-        let region = MKCoordinateRegion(center: mapCenter, latitudinalMeters: 70, longitudinalMeters: 50)
+        let region = MKCoordinateRegion(center: sensor.coordinate, latitudinalMeters: 50, longitudinalMeters: 100)
         
         mapView.setRegion(mapView.regionThatFits(region), animated: true)
         
         navigationBar.topItem?.title = sensor.subtitle
         waterTempLabel.text = String(format: "%.1f°C", sensor.data.last?.temp_water ?? "")
-        airTempLabel.text = String(format: "%.1f°C", sensor.data.last?.temp_water ?? "")
+        airTempLabel.text = String(format: "%.1f°C", sensor.data.last?.temp_air ?? "")
     }
     
     // MARK: - Actions

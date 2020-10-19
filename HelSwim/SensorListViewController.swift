@@ -23,10 +23,6 @@ class SensorListViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // should not forget to conform to UITableViewDelegate and DataSource proto in UIViewController class def
-        tableView.delegate = self
-        tableView.dataSource = self
-        
         // sort sensors in shorthand closure by water temperature attribute in descending order
         sensors = sensors.sorted { $0.data.last!.temp_water! > $1.data.last!.temp_water! }
     }

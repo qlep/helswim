@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jok-qo-YHx">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="29" width="375" height="673"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="cY3-su-Cr6"/>
                                 </connections>
@@ -63,10 +63,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jok-qo-YHx" secondAttribute="trailing" id="ciM-ha-ACX"/>
                             <constraint firstItem="gV1-70-mb1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="dne-Py-Gnw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Sco-uh-yKm" secondAttribute="bottom" constant="30" id="jPx-4w-irC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jok-qo-YHx" secondAttribute="bottom" id="k9Y-1c-lVB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jok-qo-YHx" secondAttribute="bottom" constant="-35" id="k9Y-1c-lVB"/>
                             <constraint firstItem="jok-qo-YHx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="o4f-B4-HiB"/>
                             <constraint firstItem="rDL-eN-n5d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="oZU-ri-fa0"/>
-                            <constraint firstItem="jok-qo-YHx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tnH-E1-epT"/>
+                            <constraint firstItem="jok-qo-YHx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-15" id="tnH-E1-epT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -187,15 +187,15 @@
                         <sections>
                             <tableViewSection id="Fx8-IO-s8O">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="264" id="Kmk-uN-vDs">
-                                        <rect key="frame" x="0.0" y="62" width="375" height="264"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="376" id="Kmk-uN-vDs">
+                                        <rect key="frame" x="0.0" y="62" width="375" height="376"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kmk-uN-vDs" id="y2O-Hh-pSl">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="264"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="376"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dJH-73-p8u">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="264"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="376"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="OC1-ul-q7O" id="vBR-BG-4VS"/>
                                                     </connections>
@@ -214,8 +214,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Vesi" id="Nt7-Qg-MRd" userLabel="Veden lämpötila">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="hcz-kw-3v8" style="IBUITableViewCellStyleDefault" id="DXV-Vt-mCn">
-                                        <rect key="frame" x="0.0" y="382" width="375" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="hcz-kw-3v8" style="IBUITableViewCellStyleDefault" id="DXV-Vt-mCn">
+                                        <rect key="frame" x="0.0" y="494" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DXV-Vt-mCn" id="mDJ-Yn-rjq">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -235,8 +235,8 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Ilma" id="CZB-gt-rkO" userLabel="Ilman lämpötila">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="zzx-We-sKe" style="IBUITableViewCellStyleDefault" id="X8F-3K-CEX">
-                                        <rect key="frame" x="0.0" y="481.5" width="375" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="zzx-We-sKe" style="IBUITableViewCellStyleDefault" id="X8F-3K-CEX">
+                                        <rect key="frame" x="0.0" y="593.5" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X8F-3K-CEX" id="Pts-Ta-T7x">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -260,6 +260,7 @@
                             <outlet property="delegate" destination="OC1-ul-q7O" id="D9f-ks-hHX"/>
                         </connections>
                     </tableView>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="airTempLabel" destination="zzx-We-sKe" id="bHX-fj-Jc2"/>
                         <outlet property="mapView" destination="dJH-73-p8u" id="6ce-zZ-JDa"/>
