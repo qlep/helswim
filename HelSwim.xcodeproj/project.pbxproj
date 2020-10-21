@@ -17,7 +17,40 @@
 		F74B2A6124CAE6DA001A614A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74B2A5F24CAE6DA001A614A /* LaunchScreen.storyboard */; };
 		F74B2A6924CAE851001A614A /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B2A6824CAE851001A614A /* Sensor.swift */; };
 		F74B2A6C24CAF17C001A614A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F74B2A6B24CAF17C001A614A /* MapKit.framework */; };
+		F7D90502253DA9B500384A0C /* SensorDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D90501253DA9B500384A0C /* SensorDataLoader.swift */; };
+		F7D9050C253DD89F00384A0C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D9050B253DD89F00384A0C /* WidgetKit.framework */; };
+		F7D9050E253DD89F00384A0C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D9050D253DD89F00384A0C /* SwiftUI.framework */; };
+		F7D90511253DD89F00384A0C /* Sensor_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D90510253DD89F00384A0C /* Sensor_Widget.swift */; };
+		F7D90513253DD8A200384A0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7D90512253DD8A200384A0C /* Assets.xcassets */; };
+		F7D90517253DD8A200384A0C /* Sensor WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F7D9050A253DD89F00384A0C /* Sensor WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F7D9051E253DD8FE00384A0C /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B2A6824CAE851001A614A /* Sensor.swift */; };
+		F7D90527253DD9DD00384A0C /* SensorWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D90526253DD9DD00384A0C /* SensorWidgetView.swift */; };
+		F7D9052E253E210500384A0C /* SensorWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D90526253DD9DD00384A0C /* SensorWidgetView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F7D90515253DD8A200384A0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F74B2A4924CAE6D5001A614A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7D90509253DD89F00384A0C;
+			remoteInfo = "Sensor WidgetExtension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F7D90518253DD8A200384A0C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F7D90517253DD8A200384A0C /* Sensor WidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F704DA4624E59E640076F6FB /* SensorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDetailViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +65,14 @@
 		F74B2A6224CAE6DA001A614A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F74B2A6824CAE851001A614A /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		F74B2A6B24CAF17C001A614A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F7D90501253DA9B500384A0C /* SensorDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDataLoader.swift; sourceTree = "<group>"; };
+		F7D9050A253DD89F00384A0C /* Sensor WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Sensor WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7D9050B253DD89F00384A0C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		F7D9050D253DD89F00384A0C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		F7D90510253DD89F00384A0C /* Sensor_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor_Widget.swift; sourceTree = "<group>"; };
+		F7D90512253DD8A200384A0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F7D90514253DD8A200384A0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7D90526253DD9DD00384A0C /* SensorWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorWidgetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +84,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F7D90507253DD89F00384A0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7D9050E253DD89F00384A0C /* SwiftUI.framework in Frameworks */,
+				F7D9050C253DD89F00384A0C /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -50,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				F74B2A5324CAE6D5001A614A /* HelSwim */,
+				F7D9050F253DD89F00384A0C /* Sensor Widget */,
 				F74B2A5224CAE6D5001A614A /* Products */,
 				F74B2A6A24CAF17C001A614A /* Frameworks */,
 			);
@@ -59,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				F74B2A5124CAE6D5001A614A /* HelSwim.app */,
+				F7D9050A253DD89F00384A0C /* Sensor WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,11 +120,12 @@
 			children = (
 				F74B2A5424CAE6D5001A614A /* AppDelegate.swift */,
 				F74B2A5624CAE6D5001A614A /* SceneDelegate.swift */,
+				F7D90501253DA9B500384A0C /* SensorDataLoader.swift */,
 				F74B2A5824CAE6D5001A614A /* MapViewController.swift */,
 				F704DA4624E59E640076F6FB /* SensorDetailViewController.swift */,
 				F704DA4A24E6BA4B0076F6FB /* SensorListViewController.swift */,
-				F74B2A5A24CAE6D5001A614A /* Main.storyboard */,
 				F74B2A6824CAE851001A614A /* Sensor.swift */,
+				F74B2A5A24CAE6D5001A614A /* Main.storyboard */,
 				F74B2A5D24CAE6DA001A614A /* Assets.xcassets */,
 				F74B2A5F24CAE6DA001A614A /* LaunchScreen.storyboard */,
 				F74B2A6224CAE6DA001A614A /* Info.plist */,
@@ -84,8 +137,21 @@
 			isa = PBXGroup;
 			children = (
 				F74B2A6B24CAF17C001A614A /* MapKit.framework */,
+				F7D9050B253DD89F00384A0C /* WidgetKit.framework */,
+				F7D9050D253DD89F00384A0C /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7D9050F253DD89F00384A0C /* Sensor Widget */ = {
+			isa = PBXGroup;
+			children = (
+				F7D90510253DD89F00384A0C /* Sensor_Widget.swift */,
+				F7D90526253DD9DD00384A0C /* SensorWidgetView.swift */,
+				F7D90512253DD8A200384A0C /* Assets.xcassets */,
+				F7D90514253DD8A200384A0C /* Info.plist */,
+			);
+			path = "Sensor Widget";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,15 +164,34 @@
 				F74B2A4D24CAE6D5001A614A /* Sources */,
 				F74B2A4E24CAE6D5001A614A /* Frameworks */,
 				F74B2A4F24CAE6D5001A614A /* Resources */,
+				F7D90518253DD8A200384A0C /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F7D90516253DD8A200384A0C /* PBXTargetDependency */,
 			);
 			name = HelSwim;
 			productName = HelSwim;
 			productReference = F74B2A5124CAE6D5001A614A /* HelSwim.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F7D90509253DD89F00384A0C /* Sensor WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7D9051B253DD8A200384A0C /* Build configuration list for PBXNativeTarget "Sensor WidgetExtension" */;
+			buildPhases = (
+				F7D90506253DD89F00384A0C /* Sources */,
+				F7D90507253DD89F00384A0C /* Frameworks */,
+				F7D90508253DD89F00384A0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sensor WidgetExtension";
+			productName = "Sensor WidgetExtension";
+			productReference = F7D9050A253DD89F00384A0C /* Sensor WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -114,12 +199,15 @@
 		F74B2A4924CAE6D5001A614A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1160;
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "GLEB TISHCHENKO";
 				TargetAttributes = {
 					F74B2A5024CAE6D5001A614A = {
 						CreatedOnToolsVersion = 11.6;
+					};
+					F7D90509253DD89F00384A0C = {
+						CreatedOnToolsVersion = 12.0.1;
 					};
 				};
 			};
@@ -137,6 +225,7 @@
 			projectRoot = "";
 			targets = (
 				F74B2A5024CAE6D5001A614A /* HelSwim */,
+				F7D90509253DD89F00384A0C /* Sensor WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -152,6 +241,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F7D90508253DD89F00384A0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7D90513253DD8A200384A0C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -159,7 +256,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7D90502253DA9B500384A0C /* SensorDataLoader.swift in Sources */,
 				F74B2A6924CAE851001A614A /* Sensor.swift in Sources */,
+				F7D90527253DD9DD00384A0C /* SensorWidgetView.swift in Sources */,
 				F704DA4724E59E640076F6FB /* SensorDetailViewController.swift in Sources */,
 				F704DA4B24E6BA4B0076F6FB /* SensorListViewController.swift in Sources */,
 				F74B2A5924CAE6D5001A614A /* MapViewController.swift in Sources */,
@@ -168,7 +267,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F7D90506253DD89F00384A0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7D90511253DD89F00384A0C /* Sensor_Widget.swift in Sources */,
+				F7D9051E253DD8FE00384A0C /* Sensor.swift in Sources */,
+				F7D9052E253E210500384A0C /* SensorWidgetView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F7D90516253DD8A200384A0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7D90509253DD89F00384A0C /* Sensor WidgetExtension */;
+			targetProxy = F7D90515253DD8A200384A0C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F74B2A5A24CAE6D5001A614A /* Main.storyboard */ = {
@@ -307,11 +424,12 @@
 		F74B2A6624CAE6DA001A614A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SS5NLXW3S5;
 				INFOPLIST_FILE = HelSwim/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -326,17 +444,64 @@
 		F74B2A6724CAE6DA001A614A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SS5NLXW3S5;
 				INFOPLIST_FILE = HelSwim/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.afewdevelopers.HelSwim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F7D90519253DD8A200384A0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SS5NLXW3S5;
+				INFOPLIST_FILE = "Sensor Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.afewdevelopers.HelSwim.Sensor-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F7D9051A253DD8A200384A0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SS5NLXW3S5;
+				INFOPLIST_FILE = "Sensor Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.afewdevelopers.HelSwim.Sensor-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -359,6 +524,15 @@
 			buildConfigurations = (
 				F74B2A6624CAE6DA001A614A /* Debug */,
 				F74B2A6724CAE6DA001A614A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7D9051B253DD8A200384A0C /* Build configuration list for PBXNativeTarget "Sensor WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7D90519253DD8A200384A0C /* Debug */,
+				F7D9051A253DD8A200384A0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

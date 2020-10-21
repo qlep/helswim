@@ -13,32 +13,33 @@ import CoreLocation
 class MapViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet weak var mapView: MKMapView!
+    
     let locationManager = CLLocationManager()
     var userLocation: CLLocation?
-    
     var mapCenter = CLLocationCoordinate2D(latitude: 60.227704, longitude: 24.983821)
+    let endpoint = "uiras2_v1"
     
     var sensors = [Sensor]()
+    let dataLoader = SensorDataLoader()
+    
     
     // MARK: - Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let endpoint = "uiras2_v1"
-        let url = uirasURL(with: endpoint)
         
-        performRequest(url: url)
-        
+        getSensors()
         showMapCenter()
     }
     
-    // MARK: - Data fetching and parsing
-    func performRequest(url: URL) {
+    // Data fetching and parsing methods
+    public func getSensors() {
         // create URLSession
+        let url = uirasURL(with: endpoint)
         let session = URLSession(configuration: .default)
             
         // give session task
@@ -47,20 +48,30 @@ class MapViewController: UIViewController {
                 print(error as Any)
                 return
             }
-                
+            
             if let safeData = data {
-                self.parseJSON(responseData: safeData)
+                self.parse(responseData: safeData)
             }
         }
         // start the task
         task.resume()
     }
     
-    // decoding data JSON
-    func parseJSON(responseData: Data) {
+    // this constructs url string
+    func uirasURL(with endPoint: String) -> URL {
+        let urlString = String(format: "https://iot.fvh.fi/opendata/uiras/%@.json", endPoint)
+        let url = URL(string: urlString)
+        
+        return url!
+    }
+    
+     // decoding data JSON
+    func parse(responseData: Data) {
+
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(Response.self, from: responseData)
+
             for sensor in decodedData.sensors {
                 sensors.append(sensor.value)
             }
@@ -68,7 +79,6 @@ class MapViewController: UIViewController {
             DispatchQueue.main.async {
                 self.mapView.addAnnotations(self.sensors)
             }
-            
         } catch {
             print(error)
         }
@@ -153,14 +163,6 @@ class MapViewController: UIViewController {
         }
     }
     
-    // this constructs url string
-    func uirasURL(with endPoint: String) -> URL {
-        let urlString = String(format: "https://iot.fvh.fi/opendata/uiras/%@.json", endPoint)
-        let url = URL(string: urlString)
-        
-        return url!
-    }
-    
     // MARK: - Navigation
     // passing sensors array on to SensorListViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -188,20 +190,7 @@ extension MapViewController: MKMapViewDelegate {
             let markerView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             markerView.subtitleVisibility = .visible
             
-            let rightButton = UIButton(type: .detailDisclosure)
-            markerView.rightCalloutAccessoryView = rightButton
-            
             annotationView = markerView
-        }
-        
-        if let annotationView = annotationView {
-            annotationView.annotation = annotation
-            
-            let button = annotationView.rightCalloutAccessoryView as! UIButton
-            
-            if let index = sensors.firstIndex(of: annotation as! Sensor) {
-                button.tag = index
-            }
         }
         
         return annotationView

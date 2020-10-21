@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Ya-ZB-CXu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Ya-ZB-CXu">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -55,7 +56,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="rDL-eN-n5d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="KpQ-7F-enl"/>
                             <constraint firstAttribute="bottom" secondItem="gV1-70-mb1" secondAttribute="bottom" constant="30" id="OOe-zM-Lor"/>
@@ -68,7 +70,6 @@
                             <constraint firstItem="rDL-eN-n5d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="oZU-ri-fa0"/>
                             <constraint firstItem="jok-qo-YHx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-15" id="tnH-E1-epT"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="PLL-lU-CS1"/>
                     <connections>
@@ -93,18 +94,12 @@
                                     <constraint firstAttribute="height" constant="44" id="t1z-Ph-s8K"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Helsingin uimarannat" id="jbC-Z8-3qu">
-                                        <barButtonItem key="rightBarButtonItem" title="OK" id="8D3-aL-5jZ">
-                                            <connections>
-                                                <action selector="ok" destination="Dlc-B2-QNE" id="s80-Ux-jdh"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="Helsingin uimarannat" id="jbC-Z8-3qu"/>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OnW-vh-udQ">
                                 <rect key="frame" x="0.0" y="45" width="375" height="602"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Sensor" textLabel="Eer-1I-wLw" detailTextLabel="sQ8-T2-aYu" style="IBUITableViewCellStyleValue1" id="Kca-Eh-iWT">
                                         <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
@@ -114,14 +109,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Sensor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Eer-1I-wLw" userLabel="Sensor">
-                                                    <rect key="frame" x="15" y="12" width="54" height="20.5"/>
+                                                    <rect key="frame" x="16" y="12" width="53.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Water Temp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sQ8-T2-aYu" userLabel="Water Temp">
-                                                    <rect key="frame" x="267.5" y="12" width="92.5" height="20.5"/>
+                                                    <rect key="frame" x="267" y="12" width="92" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -141,7 +136,8 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="4oC-xG-6PM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="OnW-vh-udQ" firstAttribute="top" secondItem="roS-fM-miW" secondAttribute="bottom" id="CiA-Pg-9on"/>
                             <constraint firstItem="4oC-xG-6PM" firstAttribute="trailing" secondItem="OnW-vh-udQ" secondAttribute="trailing" id="Enj-fF-HMK"/>
@@ -151,7 +147,6 @@
                             <constraint firstItem="roS-fM-miW" firstAttribute="top" secondItem="4oC-xG-6PM" secondAttribute="top" constant="1" id="e6l-vm-te9"/>
                             <constraint firstItem="roS-fM-miW" firstAttribute="leading" secondItem="4oC-xG-6PM" secondAttribute="leading" id="hhU-OG-9qn"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="4oC-xG-6PM"/>
                     </view>
                     <navigationItem key="navigationItem" id="zFk-5t-oRO"/>
                     <connections>
@@ -170,18 +165,12 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="oFH-tM-pDc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="MjE-of-OwB">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
-                                <navigationItem title="Rannan tiedot" id="ind-WC-bVI">
-                                    <barButtonItem key="rightBarButtonItem" title="OK" id="Czs-1I-V2B">
-                                        <connections>
-                                            <action selector="ok" destination="OC1-ul-q7O" id="iMl-3J-2he"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </navigationItem>
+                                <navigationItem title="Rannan tiedot" id="ind-WC-bVI"/>
                             </items>
                         </navigationBar>
                         <sections>
@@ -194,19 +183,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="376"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dJH-73-p8u">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="376"/>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="OC1-ul-q7O" id="vBR-BG-4VS"/>
-                                                    </connections>
-                                                </mapView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fHj-1j-xx1">
+                                                    <rect key="frame" x="0.0" y="1" width="375" height="374"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="dJH-73-p8u" secondAttribute="trailing" id="Bvo-er-iNt"/>
-                                                <constraint firstItem="dJH-73-p8u" firstAttribute="leading" secondItem="y2O-Hh-pSl" secondAttribute="leading" id="PPT-ou-JZQ"/>
-                                                <constraint firstItem="dJH-73-p8u" firstAttribute="centerX" secondItem="y2O-Hh-pSl" secondAttribute="centerX" id="cOv-8d-tzA"/>
-                                                <constraint firstItem="dJH-73-p8u" firstAttribute="centerY" secondItem="y2O-Hh-pSl" secondAttribute="centerY" id="iH7-Kb-Ndu"/>
-                                                <constraint firstItem="dJH-73-p8u" firstAttribute="top" secondItem="y2O-Hh-pSl" secondAttribute="top" id="kNr-e6-nFp"/>
+                                                <constraint firstItem="fHj-1j-xx1" firstAttribute="leading" secondItem="y2O-Hh-pSl" secondAttribute="leadingMargin" constant="-16" id="bco-Yt-tsh"/>
+                                                <constraint firstItem="fHj-1j-xx1" firstAttribute="centerY" secondItem="y2O-Hh-pSl" secondAttribute="centerY" id="bmN-69-8Hi"/>
+                                                <constraint firstItem="fHj-1j-xx1" firstAttribute="centerX" secondItem="y2O-Hh-pSl" secondAttribute="centerX" id="itX-ee-N0L"/>
+                                                <constraint firstItem="fHj-1j-xx1" firstAttribute="top" secondItem="y2O-Hh-pSl" secondAttribute="topMargin" constant="-10" id="wQL-UZ-WxI"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -263,7 +248,7 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="airTempLabel" destination="zzx-We-sKe" id="bHX-fj-Jc2"/>
-                        <outlet property="mapView" destination="dJH-73-p8u" id="6ce-zZ-JDa"/>
+                        <outlet property="mapSnapshot" destination="fHj-1j-xx1" id="0VD-GH-jvh"/>
                         <outlet property="navigationBar" destination="MjE-of-OwB" id="Khb-vw-2VT"/>
                         <outlet property="waterTempLabel" destination="hcz-kw-3v8" id="xcg-b3-EC2"/>
                     </connections>
@@ -293,7 +278,10 @@
     </scenes>
     <resources>
         <image name="list.number" catalog="system" width="128" height="97"/>
-        <image name="location.fill" catalog="system" width="128" height="115"/>
+        <image name="location.fill" catalog="system" width="128" height="121"/>
         <image name="sun.max.fill" catalog="system" width="128" height="124"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -27,11 +27,6 @@ class SensorListViewController: UIViewController, UITableViewDelegate, UITableVi
         sensors = sensors.sorted { $0.data.last!.temp_water! > $1.data.last!.temp_water! }
     }
     
-    // MARK: - Actions
-    @IBAction func ok() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     // MARK: - Navigation
     // when user taps sensor in sensor list
     // need to remember to give unwind segue id in storyboard
