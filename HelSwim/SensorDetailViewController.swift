@@ -29,12 +29,11 @@ class SensorDetailViewController: UITableViewController {
     }
     
     func makeMapSnapshot() {
-        let rect = mapSnapshot.bounds
         let region = MKCoordinateRegion(center: sensor.coordinate, latitudinalMeters: 50, longitudinalMeters: 200)
-        
         let options = MKMapSnapshotter.Options()
+        
         options.region = region
-        options.mapType = .satelliteFlyover
+        options.mapType = .satellite
         
         let snapshot = MKMapSnapshotter(options: options)
         
@@ -47,18 +46,28 @@ class SensorDetailViewController: UITableViewController {
                 
                 snapshot.image.draw(at: .zero)
                 
-                let pinView = MKPinAnnotationView(annotation: nil, reuseIdentifier: nil)
-                let pinImage = pinView.image
+                let point = snapshot.point(for: self.sensor.coordinate)
                 
-                var point = snapshot.point(for: self.sensor.coordinate)
+                // pin annotation view implementation
+//                let pinView = MKPinAnnotationView(annotation: nil, reuseIdentifier: nil)
+//                let pinImage = pinView.image
                 
-                if rect.contains(point) {
-                    point.x -= pinView.bounds.width / 2
-                    point.y -= pinView.bounds.height / 2
-                    point.x += pinView.centerOffset.x
-                    point.y += pinView.centerOffset.y
-                    pinImage?.draw(at: point)
-                }
+//                point.x -= pinView.bounds.width / 2
+//                point.y -= pinView.bounds.height / 2
+//                point.x += pinView.centerOffset.x
+//                point.y += pinView.centerOffset.y
+//
+//                pinImage?.draw(at: point)
+                
+                // marker annotation view implementation on snapshot
+                let annotationView = MKMarkerAnnotationView(annotation: nil, reuseIdentifier: "test")
+                annotationView.contentMode = .scaleAspectFit
+                annotationView.bounds = CGRect(x: 0, y: 0, width: 40, height: 40)
+                annotationView.drawHierarchy(in: CGRect(
+                        x: point.x - annotationView.bounds.size.width / 2.0,
+                        y: point.y - annotationView.bounds.size.height,
+                        width: annotationView.bounds.width,
+                        height: annotationView.bounds.height), afterScreenUpdates: true)
             }
             
             DispatchQueue.main.async {

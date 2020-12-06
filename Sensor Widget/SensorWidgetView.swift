@@ -14,6 +14,7 @@ import MapKit
 struct SensorWidgetView: View {
     
     var body: some View {
+        
         ZStack {
             Image("huigovnomuravei")
                 .resizable()
@@ -24,3 +25,4 @@ struct SensorWidgetView: View {
         }
     }
 }
+

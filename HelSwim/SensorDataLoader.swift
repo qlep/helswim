@@ -23,9 +23,7 @@ public class SensorDataLoader {
     public func getSensors(){
         // create URLSession
         let url = uirasURL(with: endpoint)
-        let session = URLSession.shared
-        var sensorData = Data()
-        
+        let session = URLSession.shared  
             
         // give session task
         let task = session.dataTask(with: url) { (data, response, error) in
