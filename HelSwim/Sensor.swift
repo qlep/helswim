@@ -32,7 +32,7 @@ public struct SensorData: Decodable {
 }
 
 public class Sensor: NSObject, Decodable, MKAnnotation {
-    
+
     public var meta = Meta()
     public var data = [SensorData]()
     
@@ -59,4 +59,10 @@ public class Sensor: NSObject, Decodable, MKAnnotation {
             return (String(format: "%.1f°C", data.last?.temp_water ?? ""))
         }
     }
+    
+//    private enum CodingKeys: String, CodingKey {
+//        case title, subtitle, coordinate, meta, data
+//    }
+    
+    lazy var fav = false
 }

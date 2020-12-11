@@ -27,11 +27,6 @@ class SensorListViewController: UIViewController, UITableViewDelegate, UITableVi
         sensors = sensors.sorted { $0.data.last!.temp_water! > $1.data.last!.temp_water! }
     }
     
-    // MARK: - Actions
-    @IBAction func ok() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     // MARK: - Navigation
     // when user taps sensor in sensor list
     // need to remember to give unwind segue id in storyboard
@@ -59,6 +54,10 @@ class SensorListViewController: UIViewController, UITableViewDelegate, UITableVi
             cell.textLabel?.text = "Herttoniemen uimaranta"
         } else {
             cell.textLabel?.text = sensor.subtitle
+        }
+        
+        if sensor.fav {
+            cell.textLabel?.text = "★" + sensor.subtitle!
         }
         
         cell.detailTextLabel?.text = String(format: "%.1f°C", sensor.data.last?.temp_water ?? "")

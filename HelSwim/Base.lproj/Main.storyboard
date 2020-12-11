@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Ya-ZB-CXu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Ya-ZB-CXu">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -55,7 +57,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="rDL-eN-n5d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="KpQ-7F-enl"/>
                             <constraint firstAttribute="bottom" secondItem="gV1-70-mb1" secondAttribute="bottom" constant="30" id="OOe-zM-Lor"/>
@@ -68,7 +71,6 @@
                             <constraint firstItem="rDL-eN-n5d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="oZU-ri-fa0"/>
                             <constraint firstItem="jok-qo-YHx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-15" id="tnH-E1-epT"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="PLL-lU-CS1"/>
                     <connections>
@@ -93,18 +95,12 @@
                                     <constraint firstAttribute="height" constant="44" id="t1z-Ph-s8K"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="Helsingin uimarannat" id="jbC-Z8-3qu">
-                                        <barButtonItem key="rightBarButtonItem" title="OK" id="8D3-aL-5jZ">
-                                            <connections>
-                                                <action selector="ok" destination="Dlc-B2-QNE" id="s80-Ux-jdh"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
+                                    <navigationItem title="Helsingin uimarannat" id="jbC-Z8-3qu"/>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OnW-vh-udQ">
                                 <rect key="frame" x="0.0" y="45" width="375" height="602"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Sensor" textLabel="Eer-1I-wLw" detailTextLabel="sQ8-T2-aYu" style="IBUITableViewCellStyleValue1" id="Kca-Eh-iWT">
                                         <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
@@ -114,14 +110,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Sensor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Eer-1I-wLw" userLabel="Sensor">
-                                                    <rect key="frame" x="15" y="12" width="54" height="20.5"/>
+                                                    <rect key="frame" x="16" y="12" width="53.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Water Temp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sQ8-T2-aYu" userLabel="Water Temp">
-                                                    <rect key="frame" x="267.5" y="12" width="92.5" height="20.5"/>
+                                                    <rect key="frame" x="267" y="12" width="92" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -141,7 +137,8 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="4oC-xG-6PM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="OnW-vh-udQ" firstAttribute="top" secondItem="roS-fM-miW" secondAttribute="bottom" id="CiA-Pg-9on"/>
                             <constraint firstItem="4oC-xG-6PM" firstAttribute="trailing" secondItem="OnW-vh-udQ" secondAttribute="trailing" id="Enj-fF-HMK"/>
@@ -151,7 +148,6 @@
                             <constraint firstItem="roS-fM-miW" firstAttribute="top" secondItem="4oC-xG-6PM" secondAttribute="top" constant="1" id="e6l-vm-te9"/>
                             <constraint firstItem="roS-fM-miW" firstAttribute="leading" secondItem="4oC-xG-6PM" secondAttribute="leading" id="hhU-OG-9qn"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="4oC-xG-6PM"/>
                     </view>
                     <navigationItem key="navigationItem" id="zFk-5t-oRO"/>
                     <connections>
@@ -170,22 +166,16 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="oFH-tM-pDc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="MjE-of-OwB">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
-                                <navigationItem title="Rannan tiedot" id="ind-WC-bVI">
-                                    <barButtonItem key="rightBarButtonItem" title="OK" id="Czs-1I-V2B">
-                                        <connections>
-                                            <action selector="ok" destination="OC1-ul-q7O" id="iMl-3J-2he"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </navigationItem>
+                                <navigationItem title="Rannan tiedot" id="ind-WC-bVI"/>
                             </items>
                         </navigationBar>
                         <sections>
-                            <tableViewSection id="Fx8-IO-s8O">
+                            <tableViewSection id="Fx8-IO-s8O" userLabel="Kuva">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="376" id="Kmk-uN-vDs">
                                         <rect key="frame" x="0.0" y="62" width="375" height="376"/>
@@ -212,16 +202,37 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Vesi" id="Nt7-Qg-MRd" userLabel="Veden lämpötila">
+                            <tableViewSection headerTitle="Suosikki" id="Nt7-Qg-MRd" userLabel="Suosikki">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="hcz-kw-3v8" style="IBUITableViewCellStyleDefault" id="DXV-Vt-mCn">
-                                        <rect key="frame" x="0.0" y="494" width="375" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Suosikki" textLabel="hcz-kw-3v8" rowHeight="35" style="IBUITableViewCellStyleDefault" id="DXV-Vt-mCn">
+                                        <rect key="frame" x="0.0" y="494" width="375" height="35"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DXV-Vt-mCn" id="mDJ-Yn-rjq">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="☆" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hcz-kw-3v8" userLabel="Tahti">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Vesi" id="VFY-uF-Jwy" userLabel="Veden lämpötila">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="LEb-AK-ph5" style="IBUITableViewCellStyleDefault" id="vuH-Df-vqs">
+                                        <rect key="frame" x="0.0" y="585" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vuH-Df-vqs" id="HxT-U6-8R9">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Vesi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hcz-kw-3v8">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Vesi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LEb-AK-ph5">
                                                     <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="27"/>
@@ -236,7 +247,7 @@
                             <tableViewSection headerTitle="Ilma" id="CZB-gt-rkO" userLabel="Ilman lämpötila">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="zzx-We-sKe" style="IBUITableViewCellStyleDefault" id="X8F-3K-CEX">
-                                        <rect key="frame" x="0.0" y="593.5" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="684.5" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X8F-3K-CEX" id="Pts-Ta-T7x">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -262,10 +273,11 @@
                     </tableView>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="FavLabel" destination="hcz-kw-3v8" id="06h-dE-L5s"/>
                         <outlet property="airTempLabel" destination="zzx-We-sKe" id="bHX-fj-Jc2"/>
                         <outlet property="mapView" destination="dJH-73-p8u" id="6ce-zZ-JDa"/>
                         <outlet property="navigationBar" destination="MjE-of-OwB" id="Khb-vw-2VT"/>
-                        <outlet property="waterTempLabel" destination="hcz-kw-3v8" id="xcg-b3-EC2"/>
+                        <outlet property="waterTempLabel" destination="LEb-AK-ph5" id="7UY-s9-jVc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPA-kU-iPe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -293,7 +305,10 @@
     </scenes>
     <resources>
         <image name="list.number" catalog="system" width="128" height="97"/>
-        <image name="location.fill" catalog="system" width="128" height="115"/>
+        <image name="location.fill" catalog="system" width="128" height="121"/>
         <image name="sun.max.fill" catalog="system" width="128" height="124"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

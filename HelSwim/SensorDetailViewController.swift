@@ -13,7 +13,10 @@ class SensorDetailViewController: UITableViewController {
     
     var sensor = Sensor()
     
+    var suosikki = false
+            
     @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var FavLabel: UILabel!
     @IBOutlet weak var waterTempLabel: UILabel!
     @IBOutlet weak var airTempLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
@@ -30,10 +33,21 @@ class SensorDetailViewController: UITableViewController {
         navigationBar.topItem?.title = sensor.subtitle
         waterTempLabel.text = String(format: "%.1f°C", sensor.data.last?.temp_water ?? "")
         airTempLabel.text = String(format: "%.1f°C", sensor.data.last?.temp_air ?? "")
+        
+        if sensor.fav {
+            FavLabel.text = "★"
+        }
     }
     
-    // MARK: - Actions
-    @IBAction func ok() {
-        self.dismiss(animated: true, completion: nil)
+    // MARK: - TableViewDelegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        sensor.fav.toggle()
+        
+        if sensor.fav {
+            FavLabel.text = "★"
+        } else {
+            FavLabel.text = "☆"
+        }
     }
 }
