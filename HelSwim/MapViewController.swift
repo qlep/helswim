@@ -27,12 +27,18 @@ class MapViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
-        
+               
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getSensors()
+        DispatchQueue.main.async {
+            self.sensors = self.dataLoader.getSensors()
+            print(self.sensors)
+            self.mapView.addAnnotations(self.sensors)
+        }
+        
+//        getSensors()
         showMapCenter()
     }
     

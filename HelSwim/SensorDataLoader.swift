@@ -10,50 +10,44 @@ import Foundation
 
 public class SensorDataLoader {
     
-    let endpoint = "uiras2_v1"
-    public var sensors = [Sensor]()
-    
-    func random() -> Sensor {
-        getSensors()
-        let randomIndex = Int.random(in: 0..<sensors.count)
-        return sensors[randomIndex]
+    init() {
+        print("*** data loader init now")
     }
     
+    let endpoint = "uiras2_v1"
+    
     // Data fetching and parsing class
-    public func getSensors(){
+    public func getSensors() -> [Sensor] {
         // create URLSession
         let url = uirasURL(with: endpoint)
-        let session = URLSession.shared  
-            
+        let session = URLSession.shared
+        var sensors = [Sensor]()
+        
         // give session task
-        let task = session.dataTask(with: url) { (data, response, error) in
+        let task = session.dataTask(with: url) { [self] (data, response, error) in
             
             if error != nil {
                 print(error as Any)
                 return
             }
-            if let safeData = data {
-                self.parse(responseData: safeData)
+            DispatchQueue.main.async {
+                if let safeData = data {
+                    let decoder = JSONDecoder()
+                    do {
+                        let decodedData = try decoder.decode(Response.self, from: safeData)
+
+                        for sensor in decodedData.sensors {
+                            sensors.append(sensor.value)
+                        }
+                    } catch {
+                        print(error)
+                    }
+                }
             }
         }
         // start the task
         task.resume()
-    }
-    
-     // decoding data JSON
-    func parse(responseData: Data) {
-        var result = [Sensor]()
-
-        let decoder = JSONDecoder()
-        do {
-            let decodedData = try decoder.decode(Response.self, from: responseData)
-
-            for sensor in decodedData.sensors {
-                result.append(sensor.value)
-            }
-        } catch {
-            print(error)
-        }
+        return sensors
     }
     
     // this constructs url string
