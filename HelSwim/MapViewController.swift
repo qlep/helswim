@@ -16,10 +16,8 @@ class MapViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     var userLocation: CLLocation?
-    var mapCenter = CLLocationCoordinate2D(latitude: 60.227704, longitude: 24.983821)
-    let endpoint = "uiras2_v1"
-    
-    var sensors = [Sensor]()
+    var mapCenter = CLLocationCoordinate2D(latitude: 60.227704, longitude: 24.983821)    
+    var sensorsArray = [Sensor]()
     let dataLoader = SensorDataLoader()
     
     
@@ -32,62 +30,10 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.main.async {
-            self.sensors = self.dataLoader.getSensors()
-            print(self.sensors)
-            self.mapView.addAnnotations(self.sensors)
-        }
+        dataLoader.delegate = self
+        dataLoader.getSensorData()
         
-//        getSensors()
         showMapCenter()
-    }
-    
-    // Data fetching and parsing methods
-    public func getSensors() {
-        // create URLSession
-        let url = uirasURL(with: endpoint)
-        let session = URLSession(configuration: .default)
-            
-        // give session task
-        let task = session.dataTask(with: url) { (data, response, error) in
-            if error != nil {
-                print(error as Any)
-                return
-            }
-            
-            if let safeData = data {
-                self.parse(responseData: safeData)
-            }
-        }
-        // start the task
-        task.resume()
-    }
-    
-    // this constructs url string
-    func uirasURL(with endPoint: String) -> URL {
-        let urlString = String(format: "https://iot.fvh.fi/opendata/uiras/%@.json", endPoint)
-        let url = URL(string: urlString)
-        
-        return url!
-    }
-    
-     // decoding data JSON
-    func parse(responseData: Data) {
-
-        let decoder = JSONDecoder()
-        do {
-            let decodedData = try decoder.decode(Response.self, from: responseData)
-
-            for sensor in decodedData.sensors {
-                sensors.append(sensor.value)
-            }
-            
-            DispatchQueue.main.async {
-                self.mapView.addAnnotations(self.sensors)
-            }
-        } catch {
-            print(error)
-        }
     }
 
     // MARK: - Actions
@@ -174,7 +120,7 @@ class MapViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowList" {
             let controller = segue.destination as! SensorListViewController
-            controller.sensors = sensors
+            controller.sensors = sensorsArray
         }
     }
 }
@@ -210,8 +156,8 @@ extension MapViewController: MKMapViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "Detail") as! SensorDetailViewController
         
-        if let index = sensors.firstIndex(of: annotation) {
-            controller.sensor = sensors[index]
+        if let index = sensorsArray.firstIndex(of: annotation) {
+            controller.sensor = sensorsArray[index]
         }
         // present SensorDetailViewController popover on annotation view tap
         present(controller, animated: true)
@@ -232,5 +178,15 @@ extension MapViewController: CLLocationManagerDelegate {
         
         print("*** didUpdateLocations \(newLocation)")
         userLocation = newLocation
+    }
+}
+
+// MARK: - SensorDataLoaderDelegate
+extension MapViewController: SensorDataLoaderDelegate {
+    func didUpdateSensors(sensors: [Sensor]) {
+        DispatchQueue.main.async {
+            self.mapView.addAnnotations(sensors)
+        }
+        sensorsArray = sensors
     }
 }

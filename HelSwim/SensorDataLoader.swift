@@ -8,46 +8,54 @@
 
 import Foundation
 
+protocol SensorDataLoaderDelegate   {
+    func didUpdateSensors(sensors: [Sensor])
+}
+
 public class SensorDataLoader {
     
-    init() {
-        print("*** data loader init now")
-    }
-    
-    let endpoint = "uiras2_v1"
+    public  let endpoint = "uiras2_v1"
+    var delegate: SensorDataLoaderDelegate?
     
     // Data fetching and parsing class
-    public func getSensors() -> [Sensor] {
+    public func getSensorData() {
         // create URLSession
         let url = uirasURL(with: endpoint)
-        let session = URLSession.shared
+        let session = URLSession(configuration: .default)
         var sensors = [Sensor]()
-        
-        // give session task
-        let task = session.dataTask(with: url) { [self] (data, response, error) in
             
+        // give session task
+        let task = session.dataTask(with: url) { (data, response, error) in
             if error != nil {
                 print(error as Any)
                 return
             }
-            DispatchQueue.main.async {
-                if let safeData = data {
-                    let decoder = JSONDecoder()
-                    do {
-                        let decodedData = try decoder.decode(Response.self, from: safeData)
-
-                        for sensor in decodedData.sensors {
-                            sensors.append(sensor.value)
-                        }
-                    } catch {
-                        print(error)
-                    }
+            
+            if let safeData = data {
+                let result = self.parse(responseData: safeData)
+                
+                for sensor in result!.sensors {
+                    sensors.append(sensor.value)
                 }
+                
+                self.delegate?.didUpdateSensors(sensors: sensors)
             }
         }
         // start the task
         task.resume()
-        return sensors
+    }
+    
+     // decoding data JSON
+    func parse(responseData: Data) -> Response? {
+        do {
+            let decoder = JSONDecoder()
+            let decodedData = try decoder.decode(Response.self, from: responseData)
+            
+            return decodedData
+        } catch {
+            print(error)
+            return nil
+        }
     }
     
     // this constructs url string
