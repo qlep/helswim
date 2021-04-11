@@ -14,7 +14,7 @@ protocol SensorDataLoaderDelegate   {
 
 public class SensorDataLoader {
     
-    public  let endpoint = "uiras2_v1"
+    public let endpoint = "uiras2_v1"
     var delegate: SensorDataLoaderDelegate?
     
     // Data fetching and parsing class
@@ -36,8 +36,8 @@ public class SensorDataLoader {
                 
                 for sensor in result!.sensors {
                     sensors.append(sensor.value)
+                    print(sensor)
                 }
-                
                 self.delegate?.didUpdateSensors(sensors: sensors)
             }
         }

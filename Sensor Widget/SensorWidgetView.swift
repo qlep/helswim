@@ -10,19 +10,16 @@ import SwiftUI
 import WidgetKit
 import MapKit
 
-
 struct SensorWidgetView: View {
     
-    var body: some View {
-        
+    var body: some View {        
         ZStack {
-            Image("huigovnomuravei")
+            Image(uiImage: UIImage(named: "huigovnomuravei")!)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-            Text("Хуй, говно и муравей")
+            Text("Хуй, говно и муравеее")
                 .font(.title)
                 .foregroundColor(.white)
         }
     }
 }
-

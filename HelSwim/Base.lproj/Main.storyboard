@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Ya-ZB-CXu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Ya-ZB-CXu">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jok-qo-YHx">
-                                <rect key="frame" x="0.0" y="29" width="375" height="673"/>
+                                <rect key="frame" x="0.0" y="-20" width="375" height="722"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="cY3-su-Cr6"/>
                                 </connections>
@@ -28,6 +28,7 @@
                                     <constraint firstAttribute="width" constant="63" id="2C9-Ca-jgS"/>
                                     <constraint firstAttribute="height" constant="66" id="9Vp-u3-YUi"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" image="location.fill" catalog="system"/>
                                 <connections>
                                     <action selector="showUserLocation" destination="BYZ-38-t0r" eventType="touchUpInside" id="rMg-KG-fTq"/>
@@ -39,6 +40,7 @@
                                     <constraint firstAttribute="width" constant="63" id="fHd-WK-Mt4"/>
                                     <constraint firstAttribute="height" constant="66" id="oEE-Ya-CNT"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" image="list.number" catalog="system"/>
                                 <connections>
                                     <segue destination="Dlc-B2-QNE" kind="presentation" identifier="ShowList" id="fXR-0t-qqW"/>
@@ -50,6 +52,7 @@
                                     <constraint firstAttribute="height" constant="66" id="P67-KR-gjC"/>
                                     <constraint firstAttribute="width" constant="63" id="xa5-Nn-Ace"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" image="sun.max.fill" catalog="system"/>
                                 <connections>
                                     <action selector="showMapCenter" destination="BYZ-38-t0r" eventType="touchUpInside" id="eoF-4Y-B5p"/>
@@ -68,7 +71,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jok-qo-YHx" secondAttribute="bottom" constant="-35" id="k9Y-1c-lVB"/>
                             <constraint firstItem="jok-qo-YHx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="o4f-B4-HiB"/>
                             <constraint firstItem="rDL-eN-n5d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="oZU-ri-fa0"/>
-                            <constraint firstItem="jok-qo-YHx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-15" id="tnH-E1-epT"/>
+                            <constraint firstItem="jok-qo-YHx" firstAttribute="topMargin" secondItem="8bC-Xf-vdC" secondAttribute="top" multiplier="0.8" constant="24" id="tnH-E1-epT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PLL-lU-CS1"/>
@@ -174,7 +177,7 @@
                             </items>
                         </navigationBar>
                         <sections>
-                            <tableViewSection id="Fx8-IO-s8O">
+                            <tableViewSection id="Fx8-IO-s8O" userLabel="Map view">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="376" id="Kmk-uN-vDs">
                                         <rect key="frame" x="0.0" y="62" width="375" height="376"/>
@@ -199,14 +202,14 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Vesi" id="Nt7-Qg-MRd" userLabel="Veden lämpötila">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="hcz-kw-3v8" style="IBUITableViewCellStyleDefault" id="DXV-Vt-mCn">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DataCell" textLabel="hcz-kw-3v8" style="IBUITableViewCellStyleDefault" id="DXV-Vt-mCn">
                                         <rect key="frame" x="0.0" y="494" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DXV-Vt-mCn" id="mDJ-Yn-rjq">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Vesi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hcz-kw-3v8">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="0,0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hcz-kw-3v8">
                                                     <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="27"/>
@@ -220,14 +223,14 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Ilma" id="CZB-gt-rkO" userLabel="Ilman lämpötila">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="zzx-We-sKe" style="IBUITableViewCellStyleDefault" id="X8F-3K-CEX">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DataCell" textLabel="zzx-We-sKe" style="IBUITableViewCellStyleDefault" id="X8F-3K-CEX">
                                         <rect key="frame" x="0.0" y="593.5" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X8F-3K-CEX" id="Pts-Ta-T7x">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Ilma" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zzx-We-sKe">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="0,0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zzx-We-sKe">
                                                     <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="27"/>
@@ -235,6 +238,38 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Iman ja veden lämpötilan vaihto" id="18D-pU-BqY" userLabel="Graph">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="GraphCell" rowHeight="200" id="3Tu-aA-J1d">
+                                        <rect key="frame" x="0.0" y="693" width="375" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Tu-aA-J1d" id="X33-Qq-FZA">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7iW-Z3-byu" customClass="GraphView" customModule="HelSwim" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                            <color key="value" red="0.0" green="0.27089730451485972" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                            <color key="value" red="0.0" green="0.72983195869879891" blue="0.18664156336362669" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="7iW-Z3-byu" secondAttribute="bottom" id="Ifm-C4-kHh"/>
+                                                <constraint firstItem="7iW-Z3-byu" firstAttribute="leading" secondItem="X33-Qq-FZA" secondAttribute="leading" id="XQE-A6-Nq2"/>
+                                                <constraint firstAttribute="trailing" secondItem="7iW-Z3-byu" secondAttribute="trailing" id="e5A-Ru-4Zc"/>
+                                                <constraint firstItem="7iW-Z3-byu" firstAttribute="top" secondItem="X33-Qq-FZA" secondAttribute="top" id="eng-s1-rS3"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -248,6 +283,7 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="airTempLabel" destination="zzx-We-sKe" id="bHX-fj-Jc2"/>
+                        <outlet property="graphView" destination="7iW-Z3-byu" id="vTm-23-ccX"/>
                         <outlet property="mapSnapshot" destination="fHj-1j-xx1" id="0VD-GH-jvh"/>
                         <outlet property="navigationBar" destination="MjE-of-OwB" id="Khb-vw-2VT"/>
                         <outlet property="waterTempLabel" destination="hcz-kw-3v8" id="xcg-b3-EC2"/>

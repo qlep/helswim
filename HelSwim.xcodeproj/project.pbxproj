@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F704DA4724E59E640076F6FB /* SensorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F704DA4624E59E640076F6FB /* SensorDetailViewController.swift */; };
 		F704DA4B24E6BA4B0076F6FB /* SensorListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F704DA4A24E6BA4B0076F6FB /* SensorListViewController.swift */; };
+		F738652A2608FF9D00879FCD /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73865292608FF9D00879FCD /* GraphView.swift */; };
 		F74B2A5524CAE6D5001A614A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B2A5424CAE6D5001A614A /* AppDelegate.swift */; };
 		F74B2A5724CAE6D5001A614A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B2A5624CAE6D5001A614A /* SceneDelegate.swift */; };
 		F74B2A5924CAE6D5001A614A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B2A5824CAE6D5001A614A /* MapViewController.swift */; };
@@ -17,14 +18,16 @@
 		F74B2A6124CAE6DA001A614A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74B2A5F24CAE6DA001A614A /* LaunchScreen.storyboard */; };
 		F74B2A6924CAE851001A614A /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B2A6824CAE851001A614A /* Sensor.swift */; };
 		F74B2A6C24CAF17C001A614A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F74B2A6B24CAF17C001A614A /* MapKit.framework */; };
+		F75417602588EFA500D99815 /* SensorWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D90526253DD9DD00384A0C /* SensorWidgetView.swift */; };
+		F75417652588F2A100D99815 /* SensorDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D90501253DA9B500384A0C /* SensorDataLoader.swift */; };
+		F754176E2590C2A900D99815 /* SensorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754176A258FD20E00D99815 /* SensorController.swift */; };
 		F7D90502253DA9B500384A0C /* SensorDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D90501253DA9B500384A0C /* SensorDataLoader.swift */; };
 		F7D9050C253DD89F00384A0C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D9050B253DD89F00384A0C /* WidgetKit.framework */; };
 		F7D9050E253DD89F00384A0C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D9050D253DD89F00384A0C /* SwiftUI.framework */; };
-		F7D90511253DD89F00384A0C /* Sensor_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D90510253DD89F00384A0C /* Sensor_Widget.swift */; };
+		F7D90511253DD89F00384A0C /* SensorWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D90510253DD89F00384A0C /* SensorWidget.swift */; };
 		F7D90513253DD8A200384A0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7D90512253DD8A200384A0C /* Assets.xcassets */; };
 		F7D90517253DD8A200384A0C /* Sensor WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F7D9050A253DD89F00384A0C /* Sensor WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F7D9051E253DD8FE00384A0C /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B2A6824CAE851001A614A /* Sensor.swift */; };
-		F7D90527253DD9DD00384A0C /* SensorWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D90526253DD9DD00384A0C /* SensorWidgetView.swift */; };
 		F7D9052E253E210500384A0C /* SensorWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D90526253DD9DD00384A0C /* SensorWidgetView.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +58,7 @@
 /* Begin PBXFileReference section */
 		F704DA4624E59E640076F6FB /* SensorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDetailViewController.swift; sourceTree = "<group>"; };
 		F704DA4A24E6BA4B0076F6FB /* SensorListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorListViewController.swift; sourceTree = "<group>"; };
+		F73865292608FF9D00879FCD /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		F74B2A5124CAE6D5001A614A /* HelSwim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelSwim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F74B2A5424CAE6D5001A614A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F74B2A5624CAE6D5001A614A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,11 +69,12 @@
 		F74B2A6224CAE6DA001A614A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F74B2A6824CAE851001A614A /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		F74B2A6B24CAF17C001A614A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F754176A258FD20E00D99815 /* SensorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SensorController.swift; path = HelSwim/SensorController.swift; sourceTree = SOURCE_ROOT; };
 		F7D90501253DA9B500384A0C /* SensorDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDataLoader.swift; sourceTree = "<group>"; };
 		F7D9050A253DD89F00384A0C /* Sensor WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Sensor WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7D9050B253DD89F00384A0C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F7D9050D253DD89F00384A0C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		F7D90510253DD89F00384A0C /* Sensor_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor_Widget.swift; sourceTree = "<group>"; };
+		F7D90510253DD89F00384A0C /* SensorWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorWidget.swift; sourceTree = "<group>"; };
 		F7D90512253DD8A200384A0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7D90514253DD8A200384A0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7D90526253DD9DD00384A0C /* SensorWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorWidgetView.swift; sourceTree = "<group>"; };
@@ -124,6 +129,7 @@
 				F74B2A5824CAE6D5001A614A /* MapViewController.swift */,
 				F704DA4624E59E640076F6FB /* SensorDetailViewController.swift */,
 				F704DA4A24E6BA4B0076F6FB /* SensorListViewController.swift */,
+				F73865292608FF9D00879FCD /* GraphView.swift */,
 				F74B2A6824CAE851001A614A /* Sensor.swift */,
 				F74B2A5A24CAE6D5001A614A /* Main.storyboard */,
 				F74B2A5D24CAE6DA001A614A /* Assets.xcassets */,
@@ -146,7 +152,8 @@
 		F7D9050F253DD89F00384A0C /* Sensor Widget */ = {
 			isa = PBXGroup;
 			children = (
-				F7D90510253DD89F00384A0C /* Sensor_Widget.swift */,
+				F754176A258FD20E00D99815 /* SensorController.swift */,
+				F7D90510253DD89F00384A0C /* SensorWidget.swift */,
 				F7D90526253DD9DD00384A0C /* SensorWidgetView.swift */,
 				F7D90512253DD8A200384A0C /* Assets.xcassets */,
 				F7D90514253DD8A200384A0C /* Info.plist */,
@@ -258,7 +265,8 @@
 			files = (
 				F7D90502253DA9B500384A0C /* SensorDataLoader.swift in Sources */,
 				F74B2A6924CAE851001A614A /* Sensor.swift in Sources */,
-				F7D90527253DD9DD00384A0C /* SensorWidgetView.swift in Sources */,
+				F738652A2608FF9D00879FCD /* GraphView.swift in Sources */,
+				F75417602588EFA500D99815 /* SensorWidgetView.swift in Sources */,
 				F704DA4724E59E640076F6FB /* SensorDetailViewController.swift in Sources */,
 				F704DA4B24E6BA4B0076F6FB /* SensorListViewController.swift in Sources */,
 				F74B2A5924CAE6D5001A614A /* MapViewController.swift in Sources */,
@@ -271,8 +279,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7D90511253DD89F00384A0C /* Sensor_Widget.swift in Sources */,
+				F75417652588F2A100D99815 /* SensorDataLoader.swift in Sources */,
+				F7D90511253DD89F00384A0C /* SensorWidget.swift in Sources */,
 				F7D9051E253DD8FE00384A0C /* Sensor.swift in Sources */,
+				F754176E2590C2A900D99815 /* SensorController.swift in Sources */,
 				F7D9052E253E210500384A0C /* SensorWidgetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

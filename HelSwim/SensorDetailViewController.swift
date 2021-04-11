@@ -18,6 +18,11 @@ class SensorDetailViewController: UITableViewController {
     @IBOutlet weak var waterTempLabel: UILabel!
     @IBOutlet weak var airTempLabel: UILabel!
     @IBOutlet weak var mapSnapshot: UIImageView!
+    @IBOutlet weak var graphView: GraphView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        graphView.sensorData = sensor.data
+    }
     
     override func viewDidLoad() {
         
@@ -26,6 +31,7 @@ class SensorDetailViewController: UITableViewController {
         airTempLabel.text = String(format: "%.1f°C", sensor.data.last?.temp_air ?? "")
         
         makeMapSnapshot()
+        
     }
     
     func makeMapSnapshot() {
@@ -35,9 +41,9 @@ class SensorDetailViewController: UITableViewController {
         options.region = region
         options.mapType = .satellite
         
-        let snapshot = MKMapSnapshotter(options: options)
+        let snapshotter = MKMapSnapshotter(options: options)
         
-        snapshot.start {
+        snapshotter.start {
             snapshot, error in
             guard let snapshot = snapshot, error == nil else {return}
             
@@ -48,19 +54,10 @@ class SensorDetailViewController: UITableViewController {
                 
                 let point = snapshot.point(for: self.sensor.coordinate)
                 
-                // pin annotation view implementation
-//                let pinView = MKPinAnnotationView(annotation: nil, reuseIdentifier: nil)
-//                let pinImage = pinView.image
-                
-//                point.x -= pinView.bounds.width / 2
-//                point.y -= pinView.bounds.height / 2
-//                point.x += pinView.centerOffset.x
-//                point.y += pinView.centerOffset.y
-//
-//                pinImage?.draw(at: point)
-                
                 // marker annotation view implementation on snapshot
                 let annotationView = MKMarkerAnnotationView(annotation: nil, reuseIdentifier: "test")
+                annotationView.subtitleVisibility = .visible
+                annotationView.titleVisibility = .visible
                 annotationView.contentMode = .scaleAspectFit
                 annotationView.bounds = CGRect(x: 0, y: 0, width: 40, height: 40)
                 annotationView.drawHierarchy(in: CGRect(
@@ -76,3 +73,4 @@ class SensorDetailViewController: UITableViewController {
         }
     }
 }
+

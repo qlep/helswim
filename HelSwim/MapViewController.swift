@@ -20,7 +20,6 @@ class MapViewController: UIViewController {
     var sensorsArray = [Sensor]()
     let dataLoader = SensorDataLoader()
     
-    
     // MARK: - Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -32,7 +31,6 @@ class MapViewController: UIViewController {
         
         dataLoader.delegate = self
         dataLoader.getSensorData()
-        
         showMapCenter()
     }
 
@@ -184,9 +182,10 @@ extension MapViewController: CLLocationManagerDelegate {
 // MARK: - SensorDataLoaderDelegate
 extension MapViewController: SensorDataLoaderDelegate {
     func didUpdateSensors(sensors: [Sensor]) {
-        DispatchQueue.main.async {
-            self.mapView.addAnnotations(sensors)
-        }
         sensorsArray = sensors
+        DispatchQueue.main.async {
+            self.mapView.addAnnotations(self.sensorsArray)
+        }
+
     }
 }
