@@ -13,6 +13,7 @@ import CoreLocation
 class MapViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet weak var mapView: MKMapView!
+    
     let locationManager = CLLocationManager()
     var userLocation: CLLocation?
     
@@ -46,7 +47,6 @@ class MapViewController: UIViewController {
             if error != nil {
                 DispatchQueue.main.async {
                     self.showNetworkError()
-                    print("hui")
                 }
                 print(error as Any)
                 return
