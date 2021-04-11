@@ -35,7 +35,7 @@ class SensorDetailViewController: UITableViewController {
         airTempLabel.text = String(format: "%.1f°C", sensor.data.last?.temp_air ?? "")
         
         if sensor.fav {
-            FavLabel.text = "★"
+            FavLabel.text = "★ "
         }
     }
     

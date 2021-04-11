@@ -60,9 +60,5 @@ public class Sensor: NSObject, Decodable, MKAnnotation {
         }
     }
     
-//    private enum CodingKeys: String, CodingKey {
-//        case title, subtitle, coordinate, meta, data
-//    }
-    
     lazy var fav = false
 }

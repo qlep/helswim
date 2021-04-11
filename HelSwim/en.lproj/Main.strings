@@ -1,0 +1,30 @@
+
+/* Class = "UITableViewSection"; headerTitle = "Ilma"; ObjectID = "CZB-gt-rkO"; */
+"CZB-gt-rkO.headerTitle" = "Air";
+
+/* Class = "UILabel"; text = "Sensor"; ObjectID = "Eer-1I-wLw"; */
+"Eer-1I-wLw.text" = "Sensor";
+
+/* Class = "UILabel"; text = "Vesi"; ObjectID = "LEb-AK-ph5"; */
+"LEb-AK-ph5.text" = "Water";
+
+/* Class = "UITableViewSection"; headerTitle = "Suosikki"; ObjectID = "Nt7-Qg-MRd"; */
+"Nt7-Qg-MRd.headerTitle" = "Favorite";
+
+/* Class = "UITableViewSection"; headerTitle = "Vesi"; ObjectID = "VFY-uF-Jwy"; */
+"VFY-uF-Jwy.headerTitle" = "Water";
+
+/* Class = "UILabel"; text = "☆"; ObjectID = "hcz-kw-3v8"; */
+"hcz-kw-3v8.text" = "☆";
+
+/* Class = "UINavigationItem"; title = "Rannan tiedot"; ObjectID = "ind-WC-bVI"; */
+"ind-WC-bVI.title" = "Beach Info";
+
+/* Class = "UINavigationItem"; title = "Helsingin uimarannat"; ObjectID = "jbC-Z8-3qu"; */
+"jbC-Z8-3qu.title" = "Helsinki Beaches";
+
+/* Class = "UILabel"; text = "Water Temp"; ObjectID = "sQ8-T2-aYu"; */
+"sQ8-T2-aYu.text" = "Water Temp";
+
+/* Class = "UILabel"; text = "Ilma"; ObjectID = "zzx-We-sKe"; */
+"zzx-We-sKe.text" = "Air";

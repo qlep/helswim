@@ -5,7 +5,7 @@
 //  Created by GLEB TISHCHENKO on 24.7.2020.
 //  Copyright © 2020 GLEB TISHCHENKO. All rights reserved.
 //
-
+import Foundation
 import UIKit
 import MapKit
 import CoreLocation
@@ -44,6 +44,10 @@ class MapViewController: UIViewController {
         // give session task
         let task = session.dataTask(with: url) { (data, response, error) in
             if error != nil {
+                DispatchQueue.main.async {
+                    self.showNetworkError()
+                    print("hui")
+                }
                 print(error as Any)
                 return
             }
@@ -120,8 +124,10 @@ class MapViewController: UIViewController {
     // MARK: - Helper methods
     // handle permission errors
     func showLocationServicesDeniedAlert() {
+        let title = NSLocalizedString("Location services denied", comment: "Localized location services alert title")
+        let message = NSLocalizedString("Please, allow this app to use your location", comment: "Localized location services alert message")
        
-        let alert = UIAlertController(title: "Paikannuspalvelut pois päältä", message: "Ole hyvä ja salli paikannuspalvelut tälle äpille.", preferredStyle: .alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(okAction)
@@ -131,8 +137,10 @@ class MapViewController: UIViewController {
     
     // handling networking errors
     func showNetworkError() {
+        let title = NSLocalizedString("Oops...", comment: "Localaized network error alert title")
+        let message = NSLocalizedString("An error occured while trying to connect to the server. " + "Please try again later", comment: "Localaized network error alert message")
         
-        let alert = UIAlertController(title: "Hupsista...", message: "Yhteydessä palveluun on tapahtunut häiriö" + "Ole hyvä ja yritä uudelleen", preferredStyle: .alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         
         alert.addAction(action)
@@ -149,7 +157,6 @@ class MapViewController: UIViewController {
         
         if userLocation != nil {
             locationManager.stopUpdatingLocation()
-            print("*** done locating \(String(describing: userLocation))")
         }
     }
     
@@ -229,13 +236,10 @@ extension MapViewController: MKMapViewDelegate {
 // MARK: - CLLocationManagerDelegate
 extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("*** Location manager failed with error: \(error.localizedDescription)")
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let newLocation = locations.last!
-        
-        print("*** didUpdateLocations \(newLocation)")
         userLocation = newLocation
     }
 }

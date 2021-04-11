@@ -57,7 +57,7 @@ class SensorListViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         
         if sensor.fav {
-            cell.textLabel?.text = "★" + sensor.subtitle!
+            cell.textLabel?.text = "★ " + sensor.subtitle!
         }
         
         cell.detailTextLabel?.text = String(format: "%.1f°C", sensor.data.last?.temp_water ?? "")
