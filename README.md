@@ -4,7 +4,7 @@ Get locations and hourly water and air temperature updates of your favourite pla
 Data is provided by UiRaS.
 
 <p float="middle">
-  <img src="https://github.com/qlep/helswim/blob/master/scrns/Simulator%20Screen%20Shot%201.png" width="100" />
-  <img src="https://github.com/qlep/helswim/blob/master/scrns/Simulator%20Screen%20Shot%202.png" width="100" /> 
-  <img src="https://github.com/qlep/helswim/blob/master/scrns/Simulator%20Screen%20Shot%203.png" width="100" />
+  <img src="https://github.com/qlep/helswim/blob/master/scrns/Simulator%20Screen%20Shot%201.png" width="300" />
+  <img src="https://github.com/qlep/helswim/blob/master/scrns/Simulator%20Screen%20Shot%202.png" width="300" /> 
+  <img src="https://github.com/qlep/helswim/blob/master/scrns/Simulator%20Screen%20Shot%203.png" width="300" />
 </p>
