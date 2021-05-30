@@ -74,10 +74,15 @@ class SensorListViewController: UIViewController, UITableViewDelegate, UITableVi
                 cell.sensorTitleLabel.text = "★ " + sensor.subtitle!
             }
             
+            cell.waterStackView.isHidden = false
+            cell.airStackView.isHidden = false
             cell.waterTempLabel.text = String(format: "%.1f°C", sensor.data.last?.temp_water ?? "")
             cell.airTempLabel.text = String(format: "%.1f°C", sensor.data.last?.temp_air ?? "")
+            
             region = MKCoordinateRegion(center: sensor.coordinate, latitudinalMeters: 10000, longitudinalMeters: 12500)
         }
+        
+        
         
         cell.mapView.setRegion(cell.mapView.regionThatFits(region), animated: true)
         cell.mapView.mapType = .satelliteFlyover
