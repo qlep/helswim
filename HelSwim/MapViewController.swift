@@ -114,11 +114,12 @@ class MapViewController: UIViewController {
     @IBAction func userDidPickSensorFromList(_ segue: UIStoryboardSegue) {
         let controller = segue.source as! SensorListViewController
         
-        mapCenter = controller.selectedSensor.coordinate
-        
-        let region = MKCoordinateRegion(center: mapCenter, latitudinalMeters: 1000, longitudinalMeters: 1000)
-        
-        mapView.setRegion(mapView.regionThatFits(region), animated: true)
+        if let mapCenter = controller.selectedSensorCoordinate  {
+            let region = MKCoordinateRegion(center: mapCenter, latitudinalMeters: 1000, longitudinalMeters: 1000)
+            mapView.setRegion(mapView.regionThatFits(region), animated: true)
+        } else {
+            showMapCenter()
+        }
     }
 
     // MARK: - Helper methods

@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import MapKit
 
 class SensorListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var sensors: [Sensor] = []
-    var selectedSensor = Sensor()
+    var selectedSensorCoordinate: CLLocationCoordinate2D?
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,7 +23,7 @@ class SensorListViewController: UIViewController, UITableViewDelegate, UITableVi
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // sort sensors in shorthand closure by water temperature attribute in descending order
         sensors = sensors.sorted { $0.data.last!.temp_water! > $1.data.last!.temp_water! }
     }
@@ -34,7 +35,11 @@ class SensorListViewController: UIViewController, UITableViewDelegate, UITableVi
         if segue.identifier == "PickedFromList" {
             let cell = sender as! UITableViewCell
             if let indexPath = tableView.indexPath(for: cell) {
-                selectedSensor = sensors[indexPath.row]
+                if indexPath == IndexPath(row: 0, section: 0) {
+                    selectedSensorCoordinate = nil
+                } else {
+                    selectedSensorCoordinate = sensors[indexPath.row - 1].coordinate
+                }
             }
         }
     }
@@ -47,20 +52,36 @@ class SensorListViewController: UIViewController, UITableViewDelegate, UITableVi
     
     // customize cell view
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Sensor", for: indexPath)
-        let sensor = sensors[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Sensor", for: indexPath) as! SensorTableViewCell
+        let mapCenter = CLLocationCoordinate2D(latitude: 60.227704, longitude: 24.983821)
+        var region = MKCoordinateRegion(center: mapCenter, latitudinalMeters: 10000, longitudinalMeters: 12500)
         
-        if sensor.subtitle == "Herttoniemi (Tuorinniemen uimalaituri)" {
-            cell.textLabel?.text = "Herttoniemen uimaranta"
+        if indexPath == IndexPath(row: 0, section: 0) {
+            cell.sensorTitleLabel.text = "Show all"
+            cell.waterStackView.isHidden = true
+            cell.airStackView.isHidden = true
+            
         } else {
-            cell.textLabel?.text = sensor.subtitle
+            let sensor = sensors[indexPath.row - 1]
+            
+            if sensor.subtitle == "Herttoniemi (Tuorinniemen uimalaituri)" {
+                cell.sensorTitleLabel.text = "Herttoniemen uimaranta"
+            } else {
+                cell.sensorTitleLabel.text = sensor.subtitle
+            }
+            
+            if sensor.fav {
+                cell.sensorTitleLabel.text = "★ " + sensor.subtitle!
+            }
+            
+            cell.waterTempLabel.text = String(format: "%.1f°C", sensor.data.last?.temp_water ?? "")
+            cell.airTempLabel.text = String(format: "%.1f°C", sensor.data.last?.temp_air ?? "")
+            region = MKCoordinateRegion(center: sensor.coordinate, latitudinalMeters: 10000, longitudinalMeters: 12500)
         }
         
-        if sensor.fav {
-            cell.textLabel?.text = "★ " + sensor.subtitle!
-        }
-        
-        cell.detailTextLabel?.text = String(format: "%.1f°C", sensor.data.last?.temp_water ?? "")
+        cell.mapView.setRegion(cell.mapView.regionThatFits(region), animated: true)
+        cell.mapView.mapType = .satelliteFlyover
+        cell.mapView.subviews[1].isHidden = true
         
         return cell
     }

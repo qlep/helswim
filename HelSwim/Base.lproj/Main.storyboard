@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jok-qo-YHx">
-                                <rect key="frame" x="0.0" y="29" width="375" height="673"/>
+                                <rect key="frame" x="0.0" y="-16" width="375" height="718"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="cY3-su-Cr6"/>
                                 </connections>
@@ -44,22 +44,10 @@
                                     <segue destination="Dlc-B2-QNE" kind="presentation" identifier="ShowList" id="fXR-0t-qqW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDL-eN-n5d" userLabel="Show All">
-                                <rect key="frame" x="10" y="74" width="63" height="66"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="66" id="P67-KR-gjC"/>
-                                    <constraint firstAttribute="width" constant="63" id="xa5-Nn-Ace"/>
-                                </constraints>
-                                <state key="normal" image="sun.max.fill" catalog="system"/>
-                                <connections>
-                                    <action selector="showMapCenter" destination="BYZ-38-t0r" eventType="touchUpInside" id="eoF-4Y-B5p"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="rDL-eN-n5d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="KpQ-7F-enl"/>
                             <constraint firstAttribute="bottom" secondItem="gV1-70-mb1" secondAttribute="bottom" constant="30" id="OOe-zM-Lor"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sco-uh-yKm" secondAttribute="trailing" constant="10" id="XKo-o0-O1l"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jok-qo-YHx" secondAttribute="trailing" id="ciM-ha-ACX"/>
@@ -67,8 +55,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Sco-uh-yKm" secondAttribute="bottom" constant="30" id="jPx-4w-irC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jok-qo-YHx" secondAttribute="bottom" constant="-35" id="k9Y-1c-lVB"/>
                             <constraint firstItem="jok-qo-YHx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="o4f-B4-HiB"/>
-                            <constraint firstItem="rDL-eN-n5d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="oZU-ri-fa0"/>
-                            <constraint firstItem="jok-qo-YHx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-15" id="tnH-E1-epT"/>
+                            <constraint firstItem="jok-qo-YHx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-60" id="tnH-E1-epT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PLL-lU-CS1"/>
@@ -97,34 +84,83 @@
                                     <navigationItem title="Helsingin uimarannat" id="jbC-Z8-3qu"/>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OnW-vh-udQ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OnW-vh-udQ">
                                 <rect key="frame" x="0.0" y="45" width="375" height="602"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Sensor" textLabel="Eer-1I-wLw" detailTextLabel="sQ8-T2-aYu" style="IBUITableViewCellStyleValue1" id="Kca-Eh-iWT">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Sensor" rowHeight="75" id="Kca-Eh-iWT" customClass="SensorTableViewCell" customModule="HelSwim" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kca-Eh-iWT" id="ChQ-q3-VxP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Sensor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Eer-1I-wLw" userLabel="Sensor">
-                                                    <rect key="frame" x="16" y="12" width="53.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="04U-J0-UEz">
+                                                    <rect key="frame" x="15" y="10" width="55" height="55"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="55" id="BkS-M3-JI4"/>
+                                                        <constraint firstAttribute="height" constant="55" id="fXA-39-3Uk"/>
+                                                    </constraints>
+                                                </mapView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sensor title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0P-SY-jWv">
+                                                    <rect key="frame" x="80" y="11" width="107" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Water Temp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sQ8-T2-aYu" userLabel="Water Temp">
-                                                    <rect key="frame" x="267" y="12" width="92" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="p2S-If-sVy" userLabel="Water stack">
+                                                    <rect key="frame" x="80" y="42.5" width="97" height="20.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVL-17-jVi" userLabel="Water">
+                                                            <rect key="frame" x="0.0" y="0.0" width="53.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,0ºC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfp-c7-CN6" userLabel="Water temp">
+                                                            <rect key="frame" x="55.5" y="0.0" width="41.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="nUJ-cm-VPs" userLabel="Air stack">
+                                                    <rect key="frame" x="187" y="42.5" width="73.5" height="20.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Air: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJn-EG-6D6" userLabel="Air">
+                                                            <rect key="frame" x="0.0" y="0.0" width="29" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,0ºC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGT-Lr-Eiu" userLabel="Air temp">
+                                                            <rect key="frame" x="32" y="0.0" width="41.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="04U-J0-UEz" firstAttribute="top" secondItem="ChQ-q3-VxP" secondAttribute="top" constant="10" id="40o-O1-6Z0"/>
+                                                <constraint firstItem="G0P-SY-jWv" firstAttribute="leading" secondItem="04U-J0-UEz" secondAttribute="trailing" constant="10" id="5I9-A6-ccg"/>
+                                                <constraint firstItem="nUJ-cm-VPs" firstAttribute="top" secondItem="G0P-SY-jWv" secondAttribute="bottom" constant="5" id="NOt-1N-Tjj"/>
+                                                <constraint firstItem="nUJ-cm-VPs" firstAttribute="leading" secondItem="p2S-If-sVy" secondAttribute="trailing" constant="10" id="Nd8-VM-I29"/>
+                                                <constraint firstItem="p2S-If-sVy" firstAttribute="top" secondItem="G0P-SY-jWv" secondAttribute="bottom" constant="5" id="XCd-tt-WHM"/>
+                                                <constraint firstItem="G0P-SY-jWv" firstAttribute="top" secondItem="ChQ-q3-VxP" secondAttribute="topMargin" id="fC0-nP-tqN"/>
+                                                <constraint firstItem="04U-J0-UEz" firstAttribute="leading" secondItem="ChQ-q3-VxP" secondAttribute="leading" constant="15" id="mWZ-IE-eQC"/>
+                                                <constraint firstItem="p2S-If-sVy" firstAttribute="leading" secondItem="04U-J0-UEz" secondAttribute="trailing" constant="10" id="vLa-An-W28"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="airStackView" destination="nUJ-cm-VPs" id="fHE-ps-OlG"/>
+                                            <outlet property="airTempLabel" destination="HGT-Lr-Eiu" id="HZ4-BR-xiy"/>
+                                            <outlet property="mapView" destination="04U-J0-UEz" id="glO-93-7fO"/>
+                                            <outlet property="sensorTitleLabel" destination="G0P-SY-jWv" id="jta-KR-8U1"/>
+                                            <outlet property="waterStackView" destination="p2S-If-sVy" id="O0G-To-V2O"/>
+                                            <outlet property="waterTempLabel" destination="lfp-c7-CN6" id="7EK-uY-mah"/>
                                             <segue destination="JdY-wP-eAP" kind="unwind" identifier="PickedFromList" unwindAction="userDidPickSensorFromList:" id="3Su-4V-Hg2"/>
                                         </connections>
                                     </tableViewCell>
@@ -156,7 +192,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cca-19-j3i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="JdY-wP-eAP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="714" y="869"/>
+            <point key="canvasLocation" x="712.79999999999995" y="868.51574212893559"/>
         </scene>
         <!--Sensor Detail View Controller-->
         <scene sceneID="DtN-LO-dcL">
@@ -243,10 +279,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Suosikki" id="Nt7-Qg-MRd" userLabel="Suosikki">
+                            <tableViewSection id="Nt7-Qg-MRd" userLabel="Suosikki">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Suosikki" textLabel="hcz-kw-3v8" rowHeight="35" style="IBUITableViewCellStyleDefault" id="DXV-Vt-mCn">
-                                        <rect key="frame" x="0.0" y="693" width="375" height="35"/>
+                                        <rect key="frame" x="0.0" y="673" width="375" height="35"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DXV-Vt-mCn" id="mDJ-Yn-rjq">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
@@ -305,7 +341,6 @@
     <resources>
         <image name="list.number" catalog="system" width="128" height="97"/>
         <image name="location.fill" catalog="system" width="128" height="121"/>
-        <image name="sun.max.fill" catalog="system" width="128" height="124"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -22,6 +22,7 @@
 		F74B2A6124CAE6DA001A614A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74B2A5F24CAE6DA001A614A /* LaunchScreen.storyboard */; };
 		F74B2A6924CAE851001A614A /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B2A6824CAE851001A614A /* Sensor.swift */; };
 		F74B2A6C24CAF17C001A614A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F74B2A6B24CAF17C001A614A /* MapKit.framework */; };
+		F761A5E72662F0670053A454 /* SensorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761A5E62662F0660053A454 /* SensorTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		F74B2A6224CAE6DA001A614A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F74B2A6824CAE851001A614A /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		F74B2A6B24CAF17C001A614A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F761A5E62662F0660053A454 /* SensorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				F74B2A5824CAE6D5001A614A /* MapViewController.swift */,
 				F704DA4624E59E640076F6FB /* SensorDetailViewController.swift */,
 				F704DA4A24E6BA4B0076F6FB /* SensorListViewController.swift */,
+				F761A5E62662F0660053A454 /* SensorTableViewCell.swift */,
 				F74B2A6824CAE851001A614A /* Sensor.swift */,
 				F74B2A5A24CAE6D5001A614A /* Main.storyboard */,
 				F74B2A5D24CAE6DA001A614A /* Assets.xcassets */,
@@ -215,6 +218,7 @@
 				F704DA4B24E6BA4B0076F6FB /* SensorListViewController.swift in Sources */,
 				F74B2A5924CAE6D5001A614A /* MapViewController.swift in Sources */,
 				F74B2A5524CAE6D5001A614A /* AppDelegate.swift in Sources */,
+				F761A5E72662F0670053A454 /* SensorTableViewCell.swift in Sources */,
 				F74B2A5724CAE6D5001A614A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
