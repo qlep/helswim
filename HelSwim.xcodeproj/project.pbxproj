@@ -14,6 +14,7 @@
 		F72023F726235A1E003C6AC2 /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = F72023F326235A1E003C6AC2 /* LaunchScreen.strings */; };
 		F72023F826235A1E003C6AC2 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = F72023F526235A1E003C6AC2 /* Main.strings */; };
 		F720240A262365B6003C6AC2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7202408262365B6003C6AC2 /* Localizable.strings */; };
+		F728832E26985A7400A00FAC /* SensorMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F728832D26985A7400A00FAC /* SensorMarkerView.swift */; };
 		F74B2A5524CAE6D5001A614A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B2A5424CAE6D5001A614A /* AppDelegate.swift */; };
 		F74B2A5724CAE6D5001A614A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B2A5624CAE6D5001A614A /* SceneDelegate.swift */; };
 		F74B2A5924CAE6D5001A614A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B2A5824CAE6D5001A614A /* MapViewController.swift */; };
@@ -38,6 +39,7 @@
 		F7202409262365B6003C6AC2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = Localizable.strings; sourceTree = "<group>"; };
 		F720240D262386F3003C6AC2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ../ru.lproj/Main.strings; sourceTree = "<group>"; };
 		F720240F26238791003C6AC2 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		F728832D26985A7400A00FAC /* SensorMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorMarkerView.swift; sourceTree = "<group>"; };
 		F74B2A5124CAE6D5001A614A /* HelSwim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelSwim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F74B2A5424CAE6D5001A614A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F74B2A5624CAE6D5001A614A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				F704DA4A24E6BA4B0076F6FB /* SensorListViewController.swift */,
 				F761A5E62662F0660053A454 /* SensorTableViewCell.swift */,
 				F74B2A6824CAE851001A614A /* Sensor.swift */,
+				F728832D26985A7400A00FAC /* SensorMarkerView.swift */,
 				F74B2A5A24CAE6D5001A614A /* Main.storyboard */,
 				F74B2A5D24CAE6DA001A614A /* Assets.xcassets */,
 				F74B2A5F24CAE6DA001A614A /* LaunchScreen.storyboard */,
@@ -213,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F728832E26985A7400A00FAC /* SensorMarkerView.swift in Sources */,
 				F74B2A6924CAE851001A614A /* Sensor.swift in Sources */,
 				F704DA4724E59E640076F6FB /* SensorDetailViewController.swift in Sources */,
 				F704DA4B24E6BA4B0076F6FB /* SensorListViewController.swift in Sources */,

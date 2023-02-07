@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Ya-ZB-CXu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Ya-ZB-CXu">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,12 +34,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gV1-70-mb1" userLabel="Show List">
-                                <rect key="frame" x="10" y="571" width="63" height="66"/>
+                                <rect key="frame" x="10" y="541" width="93" height="96"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="63" id="fHd-WK-Mt4"/>
-                                    <constraint firstAttribute="height" constant="66" id="oEE-Ya-CNT"/>
+                                    <constraint firstAttribute="width" constant="93" id="fHd-WK-Mt4"/>
+                                    <constraint firstAttribute="height" constant="96" id="oEE-Ya-CNT"/>
                                 </constraints>
-                                <state key="normal" image="list.number" catalog="system"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" image="list.star" catalog="system"/>
                                 <connections>
                                     <segue destination="Dlc-B2-QNE" kind="presentation" identifier="ShowList" id="fXR-0t-qqW"/>
                                 </connections>
@@ -65,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="714" y="125"/>
+            <point key="canvasLocation" x="713" y="125"/>
         </scene>
         <!--Sensor List View Controller-->
         <scene sceneID="rgM-ws-P3D">
@@ -89,7 +90,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Sensor" rowHeight="75" id="Kca-Eh-iWT" customClass="SensorTableViewCell" customModule="HelSwim" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kca-Eh-iWT" id="ChQ-q3-VxP">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
@@ -152,6 +153,7 @@
                                                 <constraint firstItem="G0P-SY-jWv" firstAttribute="top" secondItem="ChQ-q3-VxP" secondAttribute="topMargin" id="fC0-nP-tqN"/>
                                                 <constraint firstItem="04U-J0-UEz" firstAttribute="leading" secondItem="ChQ-q3-VxP" secondAttribute="leading" constant="15" id="mWZ-IE-eQC"/>
                                                 <constraint firstItem="p2S-If-sVy" firstAttribute="leading" secondItem="04U-J0-UEz" secondAttribute="trailing" constant="10" id="vLa-An-W28"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="G0P-SY-jWv" secondAttribute="trailing" constant="20" symbolic="YES" id="za1-eY-pbz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -192,7 +194,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cca-19-j3i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="JdY-wP-eAP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="712.79999999999995" y="868.51574212893559"/>
+            <point key="canvasLocation" x="713" y="841"/>
         </scene>
         <!--Sensor Detail View Controller-->
         <scene sceneID="DtN-LO-dcL">
@@ -239,15 +241,15 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Vesi" id="VFY-uF-Jwy" userLabel="Veden lämpötila">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="LEb-AK-ph5" style="IBUITableViewCellStyleDefault" id="vuH-Df-vqs">
-                                        <rect key="frame" x="0.0" y="494" width="375" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="LEb-AK-ph5" rowHeight="65" style="IBUITableViewCellStyleDefault" id="vuH-Df-vqs">
+                                        <rect key="frame" x="0.0" y="488" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vuH-Df-vqs" id="HxT-U6-8R9">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Vesi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LEb-AK-ph5">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="65"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                     <nil key="textColor"/>
@@ -260,15 +262,15 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Ilma" id="CZB-gt-rkO" userLabel="Ilman lämpötila">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="zzx-We-sKe" style="IBUITableViewCellStyleDefault" id="X8F-3K-CEX">
-                                        <rect key="frame" x="0.0" y="593.5" width="375" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" textLabel="zzx-We-sKe" rowHeight="65" style="IBUITableViewCellStyleDefault" id="X8F-3K-CEX">
+                                        <rect key="frame" x="0.0" y="603" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X8F-3K-CEX" id="Pts-Ta-T7x">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Ilma" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zzx-We-sKe">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="65"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                     <nil key="textColor"/>
@@ -282,7 +284,7 @@
                             <tableViewSection id="Nt7-Qg-MRd" userLabel="Suosikki">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Suosikki" textLabel="hcz-kw-3v8" rowHeight="35" style="IBUITableViewCellStyleDefault" id="DXV-Vt-mCn">
-                                        <rect key="frame" x="0.0" y="673" width="375" height="35"/>
+                                        <rect key="frame" x="0.0" y="704" width="375" height="35"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DXV-Vt-mCn" id="mDJ-Yn-rjq">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
@@ -339,7 +341,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="list.number" catalog="system" width="128" height="97"/>
+        <image name="list.star" catalog="system" width="128" height="94"/>
         <image name="location.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

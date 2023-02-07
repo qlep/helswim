@@ -13,12 +13,9 @@ import CoreLocation
 class MapViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet weak var mapView: MKMapView!
-    
     let locationManager = CLLocationManager()
     var userLocation: CLLocation?
-    
     var mapCenter = CLLocationCoordinate2D(latitude: 60.227704, longitude: 24.983821)
-    
     var sensors = [Sensor]()
     
     // MARK: - Lifecycle
@@ -82,14 +79,12 @@ class MapViewController: UIViewController {
     // this goes to user location on map
     @IBAction func showUserLocation() {
         // check for location tracing permissions first
-        let authStatus = CLLocationManager.authorizationStatus()
-
-        if authStatus == .notDetermined {
+        if locationManager.authorizationStatus == .notDetermined {
             locationManager.requestWhenInUseAuthorization()
             return
         }
 
-        if authStatus == .denied || authStatus == .restricted {
+        if locationManager.authorizationStatus == .denied || locationManager.authorizationStatus == .restricted {
             showLocationServicesDeniedAlert()
             return
         }
@@ -158,6 +153,7 @@ class MapViewController: UIViewController {
         
         if userLocation != nil {
             locationManager.stopUpdatingLocation()
+            print("*** userLocation not nill")
         }
     }
     
@@ -183,33 +179,31 @@ class MapViewController: UIViewController {
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
-        // 1
         guard annotation is Sensor else {
             return nil
         }
         
-        // 2
-        let identifier = "Sensor"
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "Sensor")
         
         if annotationView == nil {
-            let markerView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            markerView.subtitleVisibility = .visible
+            let markerView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "Sensor")
             
-            let rightButton = UIButton(type: .detailDisclosure)
-            markerView.rightCalloutAccessoryView = rightButton
+            markerView.subtitleVisibility = .visible
+            markerView.glyphText = ""
+            // make invisible marker
+            markerView.markerTintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)            
+            
+            // using customized image for marker
+            let pinImage = UIImage(named: "lokkimarker")
+            let size = CGSize(width: 35, height: 30)
+            UIGraphicsBeginImageContext(size)
+            pinImage!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+
+            let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+            markerView.image = resizedImage
             
             annotationView = markerView
-        }
-        
-        if let annotationView = annotationView {
-            annotationView.annotation = annotation
             
-            let button = annotationView.rightCalloutAccessoryView as! UIButton
-            
-            if let index = sensors.firstIndex(of: annotation as! Sensor) {
-                button.tag = index
-            }
         }
         
         return annotationView
